@@ -1,0 +1,20 @@
+.features-dashboard-section {
+  background: linear-gradient(to bottom, 
+    #0a0a0a 0%,
+    #0c0b0b 5%,
+    #0e0d0d 15%,
+    #0e0d0d 100%
+  );
+  position: relative;
+}
+
+/* Remove individual section backgrounds since they're now in one unified section */
+.features-dashboard-section .features-section {
+  background: transparent;
+  margin-top: 0;
+}
+
+.features-dashboard-section .dashboard-section {
+  background: transparent;
+}
+

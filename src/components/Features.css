@@ -1,0 +1,159 @@
+.features-section {
+  background: linear-gradient(to bottom, 
+    #0a0a0a 0%,
+    #0c0b0b 5%,
+    #0e0d0d 15%,
+    #0e0d0d 100%
+  );
+  color: white;
+  padding: 0px 80px 0px;
+  position: relative;
+  margin-top: 0;
+}
+
+.features-container {
+  max-width: 100%;
+  margin: 0;
+  padding: 0 40px 0 40px;
+}
+
+.features-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 80px;
+  min-height: 200px;
+  padding: 40px 0;
+}
+
+.features-header {
+  flex-shrink: 0;
+  max-width: 450px;
+  align-self: flex-end;
+}
+
+.features-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Geist Mono', 'Courier New', Courier, monospace;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 24px;
+}
+
+.label-dot {
+  width: 6px;
+  height: 6px;
+  background: #ff6b35;
+  border-radius: 50%;
+}
+
+.features-title {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: white;
+  margin: 0;
+}
+
+.features-grid {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin-left: auto;
+  margin-right: -60px;
+}
+
+.feature-card {
+  text-align: left;
+  flex: 0 0 auto;
+  padding: 0 25px;
+  max-width: 200px;
+}
+
+.feature-card:first-child {
+  padding-left: 0;
+}
+
+.feature-card:last-child {
+  padding-right: 0;
+}
+
+.feature-divider {
+  width: 1px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  margin: 0 5px;
+}
+
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+
+.feature-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.feature-title {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.feature-description {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+}
+
+@media (max-width: 1200px) {
+  .features-content {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .features-header {
+    max-width: 100%;
+  }
+
+  .features-grid {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .feature-card {
+    padding: 0 !important;
+  }
+
+  .feature-divider {
+    display: none;
+  }
+
+  .features-title {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-title {
+    font-size: 42px;
+  }
+
+  .features-section {
+    padding: 80px 20px 120px;
+  }
+}
+

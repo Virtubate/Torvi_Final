@@ -1,0 +1,95 @@
+.stats-section {
+  background: linear-gradient(to bottom, 
+    #000000 0%,
+    #000000 70%,
+    #050505 85%,
+    #0a0a0a 100%
+  );
+  color: white;
+  padding: 120px 80px 80px;
+  position: relative;
+  margin-bottom: 0;
+  min-height: auto;
+}
+
+.stats-content {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 150px;
+  padding: 0 40px;
+}
+
+.stats-left {
+  flex: 1.5;
+  max-width: 600px;
+}
+
+.stats-description {
+  font-size: 28px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.stats-right {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.stat-item {
+  text-align: left;
+}
+
+.stat-label {
+  font-family: 'Geist Mono', 'Courier New', Courier, monospace;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 80px;
+  font-weight: 400;
+  color: white;
+  line-height: 1;
+}
+
+/* Removed stat-divider - no longer needed */
+
+@media (max-width: 1024px) {
+  .stats-content {
+    flex-direction: column;
+    gap: 60px;
+    text-align: center;
+  }
+
+  .stats-right {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-description {
+    font-size: 22px;
+  }
+
+  .stat-value {
+    font-size: 56px;
+  }
+
+  .stats-right {
+    gap: 40px;
+  }
+
+  .company-logos-top {
+    gap: 40px;
+  }
+}
+

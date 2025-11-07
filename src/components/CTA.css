@@ -1,0 +1,219 @@
+.cta-section {
+  background: #f5f5f5;
+  color: #1a1a1a;
+  padding: 120px 80px 200px;
+  position: relative;
+  overflow: hidden;
+  min-height: 900px;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Animated Wave Background - Subtle */
+.animated-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 182, 193, 0.05),
+    rgba(173, 216, 230, 0.05),
+    rgba(221, 160, 221, 0.05),
+    rgba(255, 218, 185, 0.05)
+  );
+  background-size: 400% 400%;
+  animation: waveAnimation 15s ease infinite;
+}
+
+@keyframes waveAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* torvi Watermark with Wave Effect */
+.cta-watermark {
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 380px;
+  font-weight: 400;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  
+  /* Animated gradient wave on text */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 182, 193, 0.6),
+    rgba(173, 216, 230, 0.6),
+    rgba(221, 160, 221, 0.6),
+    rgba(255, 218, 185, 0.6),
+    rgba(255, 182, 193, 0.6)
+  );
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: waveAnimation 15s ease infinite;
+  
+  /* Subtle shadow for depth */
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.08))
+          drop-shadow(0 8px 15px rgba(0, 0, 0, 0.06));
+}
+
+.cta-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 120px;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-left {
+  flex: 1;
+  max-width: 550px;
+}
+
+.cta-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+.cta-dot {
+  width: 8px;
+  height: 8px;
+  background: #ff6b35;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cta-title {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.cta-right {
+  flex: 1;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 60px;
+}
+
+.cta-description {
+  font-size: 20px;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+  font-weight: 400;
+}
+
+.cta-button {
+  background: #000000;
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+  font-family: 'Inter', sans-serif;
+}
+
+.cta-button:hover {
+  background: #2a2a2a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 1024px) {
+  .cta-section {
+    padding: 80px 40px 180px;
+    min-height: 800px;
+  }
+
+  .cta-watermark {
+    font-size: 240px;
+    bottom: -10%;
+  }
+
+  .cta-container {
+    flex-direction: column;
+    gap: 60px;
+    align-items: flex-start;
+  }
+
+  .cta-right {
+    margin-top: 0;
+  }
+
+  .cta-title {
+    font-size: 48px;
+  }
+
+  .cta-description {
+    font-size: 18px;
+  }
+
+  .cta-left,
+  .cta-right {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 60px 20px 150px;
+    min-height: 700px;
+  }
+
+  .cta-watermark {
+    font-size: 140px;
+    bottom: -10%;
+  }
+
+  .cta-title {
+    font-size: 38px;
+  }
+
+  .cta-description {
+    font-size: 17px;
+  }
+
+  .cta-container {
+    gap: 40px;
+  }
+}
+
