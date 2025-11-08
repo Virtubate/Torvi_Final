@@ -1,24 +1,25 @@
 import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
-import Hero from './components/Hero'
-import Stats from './components/Stats'
-import FeaturesDashboard from './components/FeaturesDashboard'
-import Comparison from './components/Comparison'
-import CTA from './components/CTA'
 import Footer from './components/Footer'
+import Home from './pages/Home'
+import Company from './pages/Company'
+import TalkToUs from './pages/TalkToUs'
 import './App.css'
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Hero />
-      <Stats />
-      <FeaturesDashboard />
-      <Comparison />
-      <CTA />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/company" element={<Company />} />
+          <Route path="/talk-to-us" element={<TalkToUs />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   )
 }
 

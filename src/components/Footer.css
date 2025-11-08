@@ -1,8 +1,8 @@
 .footer-section {
-  background: #f8f9fa;
-  color: #1a1a1a;
+  background: #1a1a1a;
+  color: #ffffff;
   padding: 80px 80px 40px;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid #333333;
 }
 
 .footer-container {
@@ -17,7 +17,7 @@
   align-items: flex-start;
   margin-bottom: 60px;
   padding-bottom: 60px;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #333333;
 }
 
 /* Brand/Logo */
@@ -28,15 +28,26 @@
 .footer-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0;
   font-size: 24px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #ffffff;
 }
 
-.footer-logo svg {
-  width: 32px;
-  height: 32px;
+.footer-logo-wordmark {
+  height: 72px;
+  width: auto;
+  color: #ffffff;
+  display: block;
+  margin-left: -16px;
+  transform: translateY(-1px);
+}
+
+.footer-logo-glyph {
+  height: 36px;
+  width: 36px;
+  color: #ffffff;
+  display: block;
 }
 
 /* Navigation Links */
@@ -50,7 +61,7 @@
 .footer-column h4 {
   font-size: 14px;
   font-weight: 600;
-  color: #6b7280;
+  color: #9ca3af;
   margin: 0 0 20px 0;
   text-transform: capitalize;
 }
@@ -65,7 +76,7 @@
 }
 
 .footer-column ul li a {
-  color: #1a1a1a;
+  color: #ffffff;
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
@@ -73,7 +84,7 @@
 }
 
 .footer-column ul li a:hover {
-  color: #4b5563;
+  color: #d1d5db;
 }
 
 /* Compliance Section */
@@ -106,23 +117,23 @@
   justify-content: center;
   width: 64px;
   height: 64px;
-  background: white;
-  border: 1px solid #e5e7eb;
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
   border-radius: 50%;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .cert-title {
   font-size: 13px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #ffffff;
   line-height: 1;
 }
 
 .cert-subtitle {
   font-size: 10px;
   font-weight: 500;
-  color: #6b7280;
+  color: #9ca3af;
   line-height: 1;
   margin-top: 2px;
 }
@@ -133,12 +144,12 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 32px;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid #333333;
 }
 
 .footer-copyright {
   font-size: 14px;
-  color: #6b7280;
+  color: #9ca3af;
 }
 
 .footer-social {
@@ -147,7 +158,7 @@
 }
 
 .footer-social a {
-  color: #9ca3af;
+  color: #d1d5db;
   transition: color 0.2s ease;
   display: flex;
   align-items: center;
@@ -155,7 +166,7 @@
 }
 
 .footer-social a:hover {
-  color: #4b5563;
+  color: #ffffff;
 }
 
 .footer-social svg {

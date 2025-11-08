@@ -6,6 +6,7 @@
     #0e0d0d 100%
   );
   position: relative;
+  padding-top: 120px;
 }
 
 /* Remove individual section backgrounds since they're now in one unified section */

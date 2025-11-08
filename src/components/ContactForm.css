@@ -1,0 +1,331 @@
+.contact-form-section {
+  background: #ffffff;
+  color: #1a1a1a;
+  padding: 180px 60px 380px;
+  position: relative;
+  overflow: hidden;
+  min-height: 120vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Animated Wave Background - Subtle */
+.animated-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 182, 193, 0.05),
+    rgba(173, 216, 230, 0.05),
+    rgba(221, 160, 221, 0.05),
+    rgba(255, 218, 185, 0.05)
+  );
+  background-size: 400% 400%;
+  animation: waveAnimation 15s ease infinite;
+}
+
+@keyframes waveAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* torvi Watermark with Wave Effect */
+.contact-watermark {
+  position: absolute;
+  bottom: -7%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 380px;
+  font-weight: 400;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  
+  /* Animated gradient wave on text */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 182, 193, 0.6),
+    rgba(173, 216, 230, 0.6),
+    rgba(221, 160, 221, 0.6),
+    rgba(255, 218, 185, 0.6),
+    rgba(255, 182, 193, 0.6)
+  );
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: waveAnimation 15s ease infinite;
+  
+  /* Subtle shadow for depth */
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.08))
+          drop-shadow(0 8px 15px rgba(0, 0, 0, 0.06));
+}
+
+.contact-form-container {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Left Side - Content */
+.contact-left {
+  flex: 1.2;
+  max-width: 650px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 700px;
+}
+
+.contact-title {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0 0 24px 0;
+}
+
+.contact-description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0 0 60px 0;
+  font-weight: 400;
+}
+
+.quote-section {
+  margin-top: auto;
+}
+
+.contact-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.contact-dot {
+  width: 8px;
+  height: 8px;
+  background: #ff6b35;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.contact-quote {
+  font-size: 24px;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Geist Mono', 'Courier New', Courier, monospace;
+}
+
+
+/* Right Side - Form */
+.contact-right {
+  flex: 1.5;
+  max-width: none;
+  background: url('https://images.unsplash.com/photo-1511884642898-4c92249e20b6?w=1200&q=80') center/cover no-repeat;
+  border-radius: 24px;
+  padding: 60px 100px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 680px;
+}
+
+
+.contact-form {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 48px 52px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12),
+              0 0 0 1px rgba(255, 255, 255, 0.4) inset,
+              0 4px 16px rgba(255, 255, 255, 0.2) inset;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.input-helper {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 4px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #1a1a1a;
+  background: #f9fafb;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #1a1a1a;
+  background: white;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/* Phone Input */
+.phone-input {
+  display: flex;
+  gap: 8px;
+}
+
+.country-code {
+  width: 100px;
+  padding: 12px 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #f9fafb;
+  cursor: pointer;
+}
+
+.phone-input input {
+  flex: 1;
+}
+
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 14px 24px;
+  background: #6b7280;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+
+.submit-btn:hover {
+  background: #4b5563;
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .contact-right {
+    min-width: 580px;
+  }
+
+  .contact-left {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact-form-section {
+    padding: 100px 40px 180px;
+  }
+
+  .contact-form-container {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .contact-left,
+  .contact-right {
+    max-width: 100%;
+    min-width: auto;
+  }
+
+  .contact-title {
+    font-size: 40px;
+  }
+
+  .contact-watermark {
+    font-size: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-form-section {
+    padding: 100px 40px 180px;
+  }
+
+  .contact-title {
+    font-size: 32px;
+  }
+
+  .contact-form {
+    padding: 32px 24px;
+  }
+
+  .contact-watermark {
+    font-size: 140px;
+  }
+}
+

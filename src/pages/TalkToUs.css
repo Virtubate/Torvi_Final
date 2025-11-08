@@ -1,0 +1,47 @@
+.talk-to-us-page {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+/* Navbar customization for Talk to Us page */
+.talk-to-us-page ~ .header,
+body:has(.talk-to-us-page) .header {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+}
+
+body:has(.talk-to-us-page) .header:not(.header-hidden):hover {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Logo and menu items to black */
+body:has(.talk-to-us-page) .logo-wordmark,
+body:has(.talk-to-us-page) .logo-glyph {
+  color: #000000;
+}
+
+body:has(.talk-to-us-page) .dropdown-btn,
+body:has(.talk-to-us-page) .nav-link {
+  color: #000000;
+}
+
+body:has(.talk-to-us-page) .dropdown-btn:hover,
+body:has(.talk-to-us-page) .nav-link:hover {
+  color: #333333;
+}
+
+/* Talk to us button to black */
+body:has(.talk-to-us-page) .btn-primary {
+  background: #000000;
+  color: white;
+}
+
+body:has(.talk-to-us-page) .btn-primary:hover {
+  background: #2a2a2a;
+}
+

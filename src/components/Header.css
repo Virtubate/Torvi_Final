@@ -1,18 +1,39 @@
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
-  padding: 20px 0;
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
+  width: calc(100% - 80px);
+  max-width: 1300px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 0px 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+              0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.header-hidden {
+  transform: translateX(-50%) translateY(-120px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.header:not(.header-hidden):hover {
+  background: rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
+              0 0 0 1px rgba(255, 255, 255, 0.08) inset;
 }
 
 .container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .nav {
@@ -30,11 +51,31 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0;
   text-decoration: none;
   color: white;
   font-size: 20px;
   font-weight: 600;
+}
+
+.logo-wordmark {
+  height: 72px;
+  width: auto;
+  color: white;
+  display: block;
+  margin-left: -20px;
+  margin-top: -4px;
+  margin-bottom: -4px;
+  transform: translateY(-2px);
+}
+
+.logo-glyph {
+  height: 36px;
+  width: 36px;
+  color: white;
+  display: block;
+  margin-top: -2px;
+  margin-bottom: -2px;
 }
 
 .nav-links {
@@ -84,27 +125,55 @@
 
 .btn-primary {
   background: white;
-  color: #2a3f5f;
-  padding: 10px 24px;
-  border-radius: 6px;
+  color: #000;
+  padding: 8px 24px;
+  border-radius: 10px;
+  border: none;
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
   transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
 }
 
 .btn-primary:hover {
   background: rgba(255, 255, 255, 0.95);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .header {
+    width: calc(100% - 60px);
+  }
 }
 
 @media (max-width: 768px) {
+  .header {
+    top: 12px;
+    width: calc(100% - 32px);
+    padding: 0px 20px;
+  }
+
   .nav-links {
     display: none;
   }
-  
-  .container {
-    padding: 0 20px;
+
+  .logo-wordmark {
+    height: 56px;
+    margin-left: -16px;
+  }
+
+  .logo-glyph {
+    height: 28px;
+    width: 28px;
+  }
+
+  .btn-primary {
+    padding: 8px 18px;
+    font-size: 14px;
   }
 }
 

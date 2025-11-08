@@ -12,8 +12,8 @@ const FeaturesDashboard = () => {
           <path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      title: 'Performance Driven',
-      description: 'Designed to help you hit KPIs'
+      title: 'Built for complexity',
+      description: 'Designed to handle your biggest operational problems'
     },
     {
       icon: (
@@ -21,8 +21,8 @@ const FeaturesDashboard = () => {
           <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      title: 'Context-Aware',
-      description: 'Models with unmatched context window with data-backed approach for smarter decisions'
+      title: 'Built for speed',
+      description: 'Implement complex changes instantly'
     },
     {
       icon: (
@@ -30,13 +30,13 @@ const FeaturesDashboard = () => {
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      title: 'Auto improve',
-      description: 'Self-learning model for reliabile operations'
+      title: 'Built for scale',
+      description: 'Navigate millions of business scenarios with high precision'
     }
   ]
   
   return (
-    <section className="features-dashboard-section">
+    <section id="features-dashboard" className="features-dashboard-section">
       {/* First Instance */}
       <Features />
       <Dashboard />
