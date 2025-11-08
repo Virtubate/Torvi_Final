@@ -1,0 +1,223 @@
+.company-cta-section {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+  color: #ffffff;
+  padding: 120px 80px 120px;
+  position: relative;
+  overflow: hidden;
+  min-height: 40vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Animated Wave Background - Dark Gradient */
+.company-animated-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: linear-gradient(
+    135deg,
+    #1a1a1a 0%,
+    #0f0f0f 25%,
+    #151515 50%,
+    #0d0d0d 75%,
+    #1a1a1a 100%
+  );
+  background-size: 400% 400%;
+  animation: companyWaveAnimation 20s ease infinite;
+}
+
+@keyframes companyWaveAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* torvi Watermark with Wave Effect */
+
+.company-cta-watermark {
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 380px;
+  font-weight: 400;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  
+  /* Animated gradient wave on text - Dark theme */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 107, 53, 0.08),
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.03)
+  );
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: companyWaveAnimation 20s ease infinite;
+  
+  /* Subtle shadow for depth */
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3))
+          drop-shadow(0 8px 15px rgba(0, 0, 0, 0.2));
+}
+
+.company-cta-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 120px;
+  position: relative;
+  z-index: 2;
+}
+
+.company-cta-left {
+  flex: 1;
+  max-width: 550px;
+}
+
+.company-cta-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+.company-cta-dot {
+  width: 8px;
+  height: 8px;
+  background: #ff6b35;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.company-cta-title {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0;
+}
+
+.company-cta-right {
+  flex: 1;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 60px;
+}
+
+.company-cta-description {
+  font-size: 20px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  font-weight: 400;
+}
+
+.company-cta-button {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1);
+}
+
+.company-cta-button:hover {
+  background: #f5f5f5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 1024px) {
+  .company-cta-section {
+    padding: 80px 40px 90px;
+    min-height: 35vh;
+  }
+
+  .company-cta-watermark {
+    font-size: 240px;
+    top: 160px;
+  }
+
+  .company-cta-container {
+    flex-direction: column;
+    gap: 60px;
+    align-items: flex-start;
+  }
+
+  .company-cta-right {
+    margin-top: 0;
+  }
+
+  .company-cta-title {
+    font-size: 48px;
+  }
+
+  .company-cta-description {
+    font-size: 18px;
+  }
+
+  .company-cta-left,
+  .company-cta-right {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .company-cta-section {
+    padding: 60px 20px 75px;
+    min-height: 30vh;
+  }
+
+  .company-cta-watermark {
+    font-size: 140px;
+    top: 100px;
+  }
+
+  .company-cta-title {
+    font-size: 38px;
+  }
+
+  .company-cta-description {
+    font-size: 17px;
+  }
+
+  .company-cta-container {
+    gap: 40px;
+  }
+}
+
