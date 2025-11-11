@@ -1,7 +1,7 @@
 {
-  "name": "giga-landing-page",
+  "name": "torvi-landing-page",
   "version": "1.0.0",
-  "description": "Giga AI Landing Page - React",
+  "description": "Torvi AI Landing Page - React",
   "private": true,
   "scripts": {
     "dev": "vite",

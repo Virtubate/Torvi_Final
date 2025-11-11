@@ -100,49 +100,7 @@ const Dashboard = ({ variant = 'default' }) => {
               className="dashboard-background"
               style={{ backgroundImage: `url('${sections[activeSection].bgImage}')` }}
             >
-              <div className="insight-modal">
-                <div className="modal-header">
-                  <div className="gradient-icon"></div>
-                  <h3>Create insight</h3>
-                </div>
-                
-                <div className="form-grid">
-                  <div className="form-field">
-                    <label>Name</label>
-                    <input type="text" placeholder="" />
-                  </div>
-                  <div className="form-field">
-                    <label>Description</label>
-                    <input type="text" placeholder="" />
-                  </div>
-                </div>
-
-                <div className="form-grid">
-                  <div className="form-field">
-                    <label>Agent</label>
-                    <select>
-                      <option>All agents</option>
-                    </select>
-                  </div>
-                  <div className="form-field">
-                    <label>Improvement direction</label>
-                    <select>
-                      <option>Decrease</option>
-                      <option>Increase</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="form-field form-field-full">
-                  <label>What do you want to know from the insight?</label>
-                  <textarea rows="4" placeholder=""></textarea>
-                </div>
-
-                <div className="modal-actions">
-                  <button className="btn-cancel">Cancel</button>
-                  <button className="btn-create">Create insight</button>
-                </div>
-              </div>
+              {/* Overlay removed - background image only */}
             </div>
           </div>
 
@@ -456,50 +414,7 @@ const Dashboard = ({ variant = 'default' }) => {
             className="dashboard-background"
             style={{ backgroundImage: `url('${sections[activeSection].bgImage}')` }}
           >
-            <div className="voice-card">
-              <div className="card-header">
-                <h3>Voice call details</h3>
-                <div className="status-badges">
-                  <span className="badge-happy">😊 Happy</span>
-                  <span className="badge-transferred">🔄 Transferred</span>
-                </div>
-              </div>
-
-              <div className="call-info">
-                <p className="ticket-id">Ticket ID: (call__*1747...)</p>
-                <p className="timestamp">Aug 18, 2025 23:56 (2m 7s)</p>
-              </div>
-
-              <div className="audio-player">
-                <button className="play-pause">⏸</button>
-                <span className="time-current">0:19</span>
-                <div className="progress-bar">
-                  <div className="progress-fill"></div>
-                </div>
-                <span className="time-remaining">-1:48</span>
-              </div>
-
-              <div className="card-tabs">
-                <button className="tab active">Transcript</button>
-                <button className="tab">Details</button>
-                <button className="tab">Latency</button>
-              </div>
-
-              <div className="status-indicator">
-                <span className="code-badge">📋 Initialization code 4 logs</span>
-              </div>
-
-              <div className="transcript">
-                <div className="message ai-message">
-                  <p>Hello! You're speaking with Giga, your AI support assistant. How can I assist you today?</p>
-                  <span className="message-time">2s</span>
-                </div>
-                <div className="message user-message">
-                  <p>Hi, I'd like to know more about what you can do.</p>
-                  <span className="message-time">4s</span>
-                </div>
-              </div>
-            </div>
+            {/* Overlay removed - background image only */}
           </div>
         </div>
       </div>

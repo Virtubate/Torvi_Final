@@ -6,17 +6,19 @@
 /* Navbar customization for Talk to Us page */
 .talk-to-us-page ~ .header,
 body:has(.talk-to-us-page) .header {
-  background: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border: none;
-  box-shadow: none;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08),
+              0 0 0 1px rgba(0, 0, 0, 0.02) inset;
 }
 
 body:has(.talk-to-us-page) .header:not(.header-hidden):hover {
-  background: transparent;
-  border: none;
-  box-shadow: none;
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12),
+              0 0 0 1px rgba(0, 0, 0, 0.04) inset;
 }
 
 /* Logo and menu items to black */
@@ -43,5 +45,35 @@ body:has(.talk-to-us-page) .btn-primary {
 
 body:has(.talk-to-us-page) .btn-primary:hover {
   background: #2a2a2a;
+}
+
+/* iPad / Tablet Responsive */
+@media (max-width: 1024px) {
+  .talk-to-us-page {
+    min-height: auto;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  body:has(.talk-to-us-page) .header {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  body:has(.talk-to-us-page) .header:not(.header-hidden):hover {
+    background: rgba(255, 255, 255, 0.85);
+  }
+}
+
+/* Small Mobile Responsive */
+@media (max-width: 480px) {
+  body:has(.talk-to-us-page) .header {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
 }
 

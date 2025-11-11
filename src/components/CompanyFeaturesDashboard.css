@@ -6,8 +6,8 @@
     #0e0d0d 100%
   );
   position: relative;
-  padding: 120px 120px;
-  min-height: 80vh;
+  padding: 120px 120px 60px;
+  min-height: auto;
 }
 
 .company-features-content-wrapper {
@@ -68,6 +68,313 @@
   margin: 0;
 }
 
+/* Founder Cards - Portrait Images */
+.company-founder-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.company-founder-card {
+  position: relative;
+  height: 600px;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.company-founder-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: all 0.5s ease;
+}
+
+.company-founder-card:hover .company-founder-image {
+  filter: grayscale(100%);
+  transform: scale(1.05);
+}
+
+.company-founder-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 60%, rgba(0, 0, 0, 0.4) 100%);
+  padding: 32px;
+  opacity: 0;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.company-founder-card:hover .company-founder-overlay {
+  opacity: 1;
+}
+
+.company-founder-info {
+  text-align: left;
+}
+
+.company-founder-name {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: white;
+  margin: 0 0 4px 0;
+  line-height: 1.2;
+}
+
+.company-founder-role {
+  font-family: 'Geist Mono', monospace;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 12px 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.company-founder-description {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+/* How It Works - Scrolling Cards */
+.company-how-it-works {
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.company-how-it-works-header {
+  text-align: left;
+  margin-bottom: 60px;
+}
+
+.company-how-it-works-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Geist Mono', 'Courier New', Courier, monospace;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 24px;
+}
+
+.company-how-label-dot {
+  width: 6px;
+  height: 6px;
+  background: #4ade80;
+  border-radius: 50%;
+}
+
+.company-how-it-works-title {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: white;
+  margin: 0 0 16px 0;
+}
+
+.company-how-it-works-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* Scrolling Cards Container */
+.company-scroll-cards-wrapper {
+  position: relative;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Fade shadows on edges */
+.company-scroll-cards-wrapper::before,
+.company-scroll-cards-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.company-scroll-cards-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #0e0d0d 0%, transparent 100%);
+}
+
+.company-scroll-cards-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #0e0d0d 0%, transparent 100%);
+}
+
+.company-scroll-cards {
+  display: flex;
+  gap: 24px;
+  padding: 8px 0;
+  animation: scrollCards 40s linear infinite;
+  width: max-content;
+}
+
+.company-scroll-cards:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollCards {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.company-scroll-card {
+  flex: 0 0 auto;
+  width: 320px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s ease;
+}
+
+.company-scroll-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-4px);
+}
+
+.company-card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 12px 0;
+}
+
+.company-card-description {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* CTA Card */
+.company-features-cta-card {
+  width: 100%;
+  max-width: 1600px;
+  margin: 120px auto 0;
+  padding: 80px 100px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  margin-bottom: 0;
+}
+
+/* Subtle grain texture overlay */
+.company-features-cta-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(255, 107, 53, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 107, 53, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.company-features-cta-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.company-features-cta-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Geist Mono', 'Courier New', Courier, monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 32px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.company-features-cta-dot {
+  width: 8px;
+  height: 8px;
+  background: #ff6b35;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.company-features-cta-title {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: white;
+  margin: 0 0 24px 0;
+}
+
+.company-features-cta-description {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 40px 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.company-features-cta-button {
+  background: white;
+  color: #000000;
+  border: none;
+  padding: 18px 48px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Outfit', sans-serif;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1);
+}
+
+.company-features-cta-button:hover {
+  background: #f5f5f5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 255, 255, 0.15);
+}
+
 /* Remove individual section backgrounds since they're now in one unified section */
 .company-features-dashboard-section .features-section {
   background: transparent;
@@ -81,7 +388,8 @@
 
 @media (max-width: 1024px) {
   .company-features-dashboard-section {
-    padding: 100px 60px;
+    padding: 100px 60px 60px;
+    min-height: auto;
   }
 
   .company-features-content-wrapper {
@@ -106,11 +414,74 @@
   .company-features-text-content p {
     font-size: 22px;
   }
+
+  .company-features-cta-card {
+    width: 90%;
+    padding: 60px 60px;
+    margin-top: 100px;
+  }
+
+  .company-features-cta-title {
+    font-size: 52px;
+  }
+
+  .company-features-cta-description {
+    font-size: 18px;
+  }
+
+  .company-how-it-works {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  .company-how-it-works-title {
+    font-size: 42px;
+  }
+
+  .company-scroll-card {
+    width: 280px;
+  }
+
+  .company-scroll-cards-wrapper::before,
+  .company-scroll-cards-wrapper::after {
+    width: 80px;
+  }
+
+  .company-founder-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  .company-founder-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+
+  .company-founder-name {
+    font-size: 24px;
+  }
+
+  .company-founder-role {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .company-founder-description {
+    font-size: 12px;
+  }
+
+  .company-founder-overlay {
+    padding: 28px 24px;
+  }
 }
 
 @media (max-width: 768px) {
   .company-features-dashboard-section {
-    padding: 80px 40px;
+    padding: 80px 40px 50px;
+    min-height: auto;
   }
 
   .company-features-header {
@@ -124,11 +495,82 @@
   .company-features-text-content p {
     font-size: 20px;
   }
+
+  .company-features-cta-card {
+    width: 95%;
+    padding: 50px 40px;
+    margin-top: 80px;
+  }
+
+  .company-features-cta-title {
+    font-size: 42px;
+  }
+
+  .company-features-cta-description {
+    font-size: 17px;
+  }
+
+  .company-features-cta-button {
+    padding: 16px 40px;
+    font-size: 15px;
+  }
+
+  .company-how-it-works {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .company-how-it-works-title {
+    font-size: 36px;
+  }
+
+  .company-how-it-works-subtitle {
+    font-size: 16px;
+  }
+
+  .company-scroll-card {
+    width: 260px;
+    padding: 28px;
+  }
+
+  .company-scroll-cards-wrapper::before,
+  .company-scroll-cards-wrapper::after {
+    width: 60px;
+  }
+
+  .company-founder-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .company-founder-card {
+    height: 450px;
+  }
+
+  .company-founder-name {
+    font-size: 22px;
+  }
+
+  .company-founder-role {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .company-founder-description {
+    font-size: 11px;
+  }
+
+  .company-founder-overlay {
+    padding: 24px 20px;
+  }
 }
 
 @media (max-width: 480px) {
   .company-features-dashboard-section {
-    padding: 60px 20px;
+    padding: 60px 20px 40px;
+    min-height: auto;
   }
 
   .company-features-heading {
@@ -139,6 +581,80 @@
   .company-features-text-content p {
     font-size: 18px;
     line-height: 1.6;
+  }
+
+  .company-features-cta-card {
+    width: 100%;
+    padding: 40px 30px;
+    margin-top: 60px;
+    border-radius: 16px;
+  }
+
+  .company-features-cta-title {
+    font-size: 32px;
+  }
+
+  .company-features-cta-description {
+    font-size: 16px;
+  }
+
+  .company-features-cta-button {
+    padding: 14px 36px;
+    font-size: 14px;
+  }
+
+  .company-how-it-works {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .company-how-it-works-title {
+    font-size: 28px;
+  }
+
+  .company-how-it-works-subtitle {
+    font-size: 15px;
+  }
+
+  .company-scroll-card {
+    width: 240px;
+    padding: 24px;
+  }
+
+  .company-card-title {
+    font-size: 18px;
+  }
+
+  .company-card-description {
+    font-size: 14px;
+  }
+
+  .company-scroll-cards-wrapper::before,
+  .company-scroll-cards-wrapper::after {
+    width: 40px;
+  }
+
+  .company-founder-cards-grid {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .company-founder-name {
+    font-size: 20px;
+  }
+
+  .company-founder-role {
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+
+  .company-founder-description {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .company-founder-overlay {
+    padding: 20px 16px;
   }
 }
 

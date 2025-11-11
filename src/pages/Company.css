@@ -113,27 +113,67 @@
 
 /* Responsive Design */
 
-@media (max-width: 768px) {
+/* iPad / Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
   .company-hero {
-    padding: 100px 40px 150px;
+    padding: 100px 60px 180px;
   }
 
   .company-hero-title {
-    font-size: 48px;
+    font-size: 56px;
+  }
+
+  .company-hero-subtitle {
+    font-size: 19px;
+  }
+
+  .company-badge {
+    font-size: 11px;
+    padding: 7px 14px;
+    margin-bottom: 35px;
+  }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 768px) {
+  .company-hero {
+    padding: 100px 40px 150px;
+    background-position: center;
+  }
+
+  .company-hero-title {
+    font-size: 42px;
+    line-height: 1.25;
   }
 
   .company-hero-subtitle {
     font-size: 18px;
   }
+
+  .company-badge {
+    font-size: 10px;
+    padding: 6px 12px;
+    margin-bottom: 30px;
+  }
 }
 
+/* Small Mobile (< 480px) */
 @media (max-width: 480px) {
+  .company-hero {
+    padding: 90px 20px 120px;
+  }
+
   .company-hero-title {
-    font-size: 36px;
+    font-size: 32px;
   }
 
   .company-hero-subtitle {
     font-size: 16px;
+  }
+
+  .company-badge {
+    font-size: 10px;
+    padding: 6px 12px;
   }
 }
 

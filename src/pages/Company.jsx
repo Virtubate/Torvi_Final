@@ -1,6 +1,7 @@
 import React from 'react'
 import CompanyStats from '../components/CompanyStats'
 import CompanyFeaturesDashboard from '../components/CompanyFeaturesDashboard'
+import CompanyCTA from '../components/CompanyCTA'
 import './Company.css'
 
 const Company = () => {
@@ -26,6 +27,9 @@ const Company = () => {
 
       {/* Company Features Dashboard Section */}
       <CompanyFeaturesDashboard />
+
+      {/* Company CTA Section */}
+      <CompanyCTA />
     </div>
   )
 }

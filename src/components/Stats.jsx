@@ -51,7 +51,7 @@ const Stats = () => {
       <div className="stats-content">
         <div className="stats-left">
           <p className="stats-description">
-            Solve your most complex support issues<br/>
+            Solve your most complex operational issues<br/>
             with AI, up and running in two weeks.
           </p>
         </div>

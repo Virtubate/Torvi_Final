@@ -19,3 +19,27 @@
   background: transparent;
 }
 
+/* iPad / Tablet Responsive */
+@media (max-width: 1024px) {
+  .features-dashboard-section {
+    padding-top: 100px;
+    overflow-x: hidden;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .features-dashboard-section {
+    padding-top: 80px;
+    overflow-x: hidden;
+  }
+}
+
+/* Small Mobile Responsive */
+@media (max-width: 480px) {
+  .features-dashboard-section {
+    padding-top: 60px;
+    overflow-x: hidden;
+  }
+}
+

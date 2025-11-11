@@ -147,7 +147,7 @@
   }
 
   .company-stats-outline-text {
-    font-size: 110px;
+    font-size: 85px;
     letter-spacing: -2px;
     line-height: 1;
     text-shadow: 
@@ -185,20 +185,23 @@
 
 @media (max-width: 768px) {
   .company-stats-section {
-    padding: 100px 30px;
+    padding: 100px 10px;
     min-height: 50vh;
   }
 
   .company-stats-text-container {
-    padding: 0 30px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
   }
 
   .company-stats-outline-text {
-    font-size: 70px;
+    font-size: 54px;
     -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.6);
     text-stroke: 1.5px rgba(255, 255, 255, 0.6);
     letter-spacing: -1px;
     line-height: 1;
+    text-align: center;
     text-shadow: 
       0 0 10px rgba(255, 255, 255, 0.4),
       0 0 20px rgba(255, 255, 255, 0.2),
@@ -236,16 +239,19 @@
 
 @media (max-width: 480px) {
   .company-stats-section {
-    padding: 80px 20px;
+    padding: 80px 10px;
   }
 
   .company-stats-text-container {
-    padding: 0 20px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
   }
 
   .company-stats-outline-text {
-    font-size: 45px;
+    font-size: 42px;
     line-height: 1;
+    text-align: center;
     text-shadow: 
       0 0 8px rgba(255, 255, 255, 0.4),
       0 0 15px rgba(255, 255, 255, 0.2),

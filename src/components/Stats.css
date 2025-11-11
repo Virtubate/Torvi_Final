@@ -63,33 +63,73 @@
 
 /* Removed stat-divider - no longer needed */
 
+/* iPad / Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
+  .stats-section {
+    padding: 100px 60px 60px;
+  }
+
   .stats-content {
     flex-direction: column;
     gap: 60px;
     text-align: center;
+    padding: 0 20px;
+  }
+
+  .stats-left {
+    max-width: 100%;
+  }
+
+  .stats-description {
+    font-size: 24px;
   }
 
   .stats-right {
     justify-content: center;
   }
+
+  .stat-value {
+    font-size: 70px;
+  }
 }
 
+/* Mobile (< 768px) */
 @media (max-width: 768px) {
+  .stats-section {
+    padding: 80px 40px 60px;
+  }
+
+  .stats-content {
+    gap: 50px;
+    padding: 0 10px;
+  }
+
   .stats-description {
     font-size: 22px;
+    line-height: 1.4;
   }
 
   .stat-value {
     font-size: 56px;
   }
+}
 
-  .stats-right {
-    gap: 40px;
+/* Small Mobile (< 480px) */
+@media (max-width: 480px) {
+  .stats-section {
+    padding: 60px 20px 40px;
   }
 
-  .company-logos-top {
-    gap: 40px;
+  .stats-description {
+    font-size: 20px;
+  }
+
+  .stat-value {
+    font-size: 48px;
+  }
+
+  .stat-label {
+    font-size: 11px;
   }
 }
 

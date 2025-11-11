@@ -1,6 +1,6 @@
-# Giga Landing Page
+# Torvi Landing Page
 
-A modern, beautiful landing page recreation for Giga - AI that talks like a human.
+A modern, beautiful landing page recreation for Torvi - AI.
 
 ## Features
 

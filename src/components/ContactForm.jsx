@@ -9,11 +9,54 @@ const ContactForm = () => {
     role: '',
     businessDescription: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitMessage, setSubmitMessage] = useState('')
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    // Handle form submission here
+    setIsSubmitting(true)
+    setSubmitMessage('')
+
+    try {
+      // Using Web3Forms - Replace 'YOUR_ACCESS_KEY_HERE' with your actual access key from web3forms.com
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: '848ceeee-b91b-4a8f-908a-f8321bca1874', // Get this from https://web3forms.com
+          subject: `New Contact Form Submission from ${formData.fullName}`,
+          from_name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          role: formData.role,
+          message: formData.businessDescription,
+          to: 'support@torvi.ai'
+        })
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        setSubmitMessage('Thank you! Your message has been sent successfully.')
+        // Reset form
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          role: '',
+          businessDescription: ''
+        })
+      } else {
+        setSubmitMessage('Something went wrong. Please try again or email us at support@torvi.ai')
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setSubmitMessage('Failed to send message. Please email us directly at support@torvi.ai')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e) => {
@@ -81,7 +124,7 @@ const ContactForm = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="john@gigaml.com"
+                placeholder="john@torvi.com"
                 required
               />
             </div>
@@ -137,9 +180,16 @@ const ContactForm = () => {
               />
             </div>
 
+            {/* Submit Message */}
+            {submitMessage && (
+              <div className={`submit-message ${submitMessage.includes('success') ? 'success' : 'error'}`}>
+                {submitMessage}
+              </div>
+            )}
+
             {/* Submit Button */}
-            <button type="submit" className="submit-btn">
-              Submit →
+            <button type="submit" className="submit-btn" disabled={isSubmitting}>
+              {isSubmitting ? 'Sending...' : 'Submit →'}
             </button>
           </form>
         </div>

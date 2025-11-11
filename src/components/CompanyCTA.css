@@ -152,7 +152,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   width: fit-content;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Outfit', sans-serif;
   box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1);
 }
 
@@ -169,8 +169,10 @@
   }
 
   .company-cta-watermark {
-    font-size: 240px;
-    top: 160px;
+    font-size: 280px;
+    font-weight: 700;
+    top: auto;
+    bottom: -90px;
   }
 
   .company-cta-container {
@@ -204,8 +206,10 @@
   }
 
   .company-cta-watermark {
-    font-size: 140px;
-    top: 100px;
+    font-size: 180px;
+    font-weight: 700;
+    top: auto;
+    bottom: -60px;
   }
 
   .company-cta-title {
@@ -218,6 +222,15 @@
 
   .company-cta-container {
     gap: 40px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .company-cta-watermark {
+    font-size: 120px;
+    font-weight: 700;
+    bottom: -40px;
   }
 }
 
