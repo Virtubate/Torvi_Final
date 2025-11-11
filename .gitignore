@@ -39,4 +39,7 @@ lerna-debug.log*
 # Vite
 .vite
 
+# GitHub Pages metadata
+_metadata.json
+.nojekyll
 
