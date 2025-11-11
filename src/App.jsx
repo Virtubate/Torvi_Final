@@ -9,7 +9,7 @@ import './App.css'
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Torvi_Final">
       <div className="App">
         <Header />
         <Routes>
