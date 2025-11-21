@@ -25,7 +25,7 @@ const CompanyFeaturesDashboard = () => {
       <div className="company-founder-cards-grid">
         <div className="company-founder-card">
           <img 
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop" 
+            src="" 
             alt="Krishna, The Builder" 
             className="company-founder-image"
           />
@@ -42,7 +42,7 @@ const CompanyFeaturesDashboard = () => {
 
         <div className="company-founder-card">
           <img 
-            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=1000&fit=crop" 
+            src="" 
             alt="Rahul, The Navigator" 
             className="company-founder-image"
           />
@@ -59,7 +59,7 @@ const CompanyFeaturesDashboard = () => {
 
         <div className="company-founder-card">
           <img 
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=1000&fit=crop" 
+            src="" 
             alt="Ram, The Anchor" 
             className="company-founder-image"
           />
