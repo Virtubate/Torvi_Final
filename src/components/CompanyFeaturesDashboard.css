@@ -448,16 +448,10 @@
   }
 
   .company-founder-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     margin-top: 80px;
     margin-bottom: 80px;
-  }
-
-  .company-founder-card:last-child {
-    grid-column: 1 / -1;
-    max-width: 50%;
-    margin: 0 auto;
   }
 
   .company-founder-name {
