@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Footer.css'
 
 const CompanyWordmark = ({ className = 'h-6 w-auto' }) => (
@@ -47,7 +48,7 @@ const Footer = () => {
               <h4>Company</h4>
               <ul>
                 <li><a href="#careers">Careers</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><Link to="/talk-to-us">Contact</Link></li>
                 <li><a href="#trust">Trust Center</a></li>
               </ul>
             </div>
@@ -56,8 +57,8 @@ const Footer = () => {
               <h4>Resources</h4>
               <ul>
                 <li><a href="#blog">Blog</a></li>
-                <li><a href="#privacy">Privacy Policy</a></li>
-                <li><a href="#terms">Terms Of Service</a></li>
+                <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+                <li><Link to="/terms-of-service">Terms Of Service</Link></li>
               </ul>
             </div>
           </div>
