@@ -229,6 +229,7 @@ h2.gradient-rpa {
   align-items: center;
   justify-content: center;
   transition: background-image 0.5s ease;
+  position: relative;
 }
 
 /* Voice Call Card */
@@ -1140,5 +1141,1517 @@ h2.gradient-rpa {
   display: flex;
   flex-direction: column;
   gap: 0;
+}
+
+/* Agent Canvas Overlay - Configuration Panel */
+.agent-canvas-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.agent-config-panel {
+  background: transparent;
+  border-radius: 16px;
+  padding: 0;
+  width: 100%;
+  max-width: 750px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+/* Top Navigation Bar - Solid */
+.config-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(24, 24, 27, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.config-tabs {
+  display: flex;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.config-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.config-tab:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.config-tab.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.config-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toggle-switch {
+  width: 32px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.toggle-switch::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: all 0.2s;
+}
+
+.toggle-switch.active {
+  background: #22c55e;
+}
+
+.toggle-switch.active::after {
+  left: 16px;
+}
+
+.btn-share {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-share:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Config Sections - Glassmorphism */
+.config-sections-wrapper {
+  background: rgba(24, 24, 27, 0.60);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.config-section {
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.config-section:last-of-type {
+  border-bottom: none;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-add,
+.btn-expand {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-add:hover,
+.btn-expand:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Config Chips */
+.config-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.config-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.2s;
+}
+
+.config-chip:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.chip-close {
+  margin-left: 4px;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.chip-close:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.chip-salesforce {
+  border-color: rgba(0, 161, 224, 0.3);
+}
+
+.chip-icon-sf {
+  color: #00a1e0;
+}
+
+.chip-hubspot {
+  border-color: rgba(255, 122, 89, 0.3);
+}
+
+.chip-icon-hs {
+  color: #ff7a59;
+}
+
+.chip-logo {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Model Grid */
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.model-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.model-field label {
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.select-field {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.select-field:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.select-icon {
+  color: #a78bfa;
+}
+
+.select-logo {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.select-arrow {
+  margin-left: auto;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 10px;
+}
+
+/* Instructions Box */
+.instructions-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 6px;
+}
+
+.instructions-box p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.instructions-hint {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.instructions-hint kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 5px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  font-size: 10px;
+  font-family: inherit;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Bottom Actions - Solid */
+.config-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(24, 24, 27, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.btn-copilot {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  background: #18181b;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-copilot:hover {
+  background: #27272a;
+}
+
+.copilot-icon {
+  color: #a78bfa;
+}
+
+.btn-preview {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-preview:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* =============================================
+   WORKFLOW BUILDER PANEL STYLES
+   ============================================= */
+
+.workflow-builder-panel {
+  background: transparent;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 950px;
+  height: 480px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Workflow Top Bar - Solid */
+.workflow-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background: rgba(24, 24, 27, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.workflow-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.workflow-title svg {
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.workflow-title svg:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.btn-back {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.btn-back:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.workflow-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-clear {
+  padding: 7px 14px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.7);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-clear:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.btn-save {
+  padding: 7px 16px;
+  background: #10b981;
+  border: none;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-save:hover {
+  background: #059669;
+}
+
+/* Workflow Content Area */
+.workflow-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Workflow Sidebar - Glassmorphism */
+.workflow-sidebar {
+  width: 180px;
+  background: rgba(24, 24, 27, 0.60);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px;
+  overflow: hidden;
+}
+
+.workflow-sidebar h3 {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 10px 0;
+}
+
+.workflow-search {
+  width: 100%;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  color: white;
+  font-size: 11px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+
+.workflow-search::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.workflow-search:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Node Categories */
+.node-category {
+  margin-bottom: 8px;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.category-header:hover {
+  color: white;
+}
+
+.category-items {
+  padding-left: 4px;
+}
+
+.node-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 2px;
+}
+
+.node-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.node-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.node-icon svg {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.node-icon.schedule { background: rgba(139, 92, 246, 0.2); color: #8b5cf6; }
+.node-icon.schedule svg { color: #8b5cf6; }
+.node-icon.chat { background: rgba(59, 130, 246, 0.2); color: #3b82f6; }
+.node-icon.chat svg { color: #3b82f6; }
+.node-icon.manual { background: rgba(34, 197, 94, 0.2); color: #22c55e; }
+.node-icon.manual svg { color: #22c55e; }
+.node-icon.slack { background: rgba(236, 72, 153, 0.2); }
+.node-icon.sheets { background: rgba(34, 197, 94, 0.2); }
+
+.node-logo {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.node-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.node-name {
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.node-desc {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Workflow Canvas - Glassmorphism */
+.workflow-canvas {
+  flex: 1;
+  background: rgba(24, 24, 27, 0.60);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
+}
+
+.wf-canvas-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Connection Lines SVG */
+.wf-lines-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.wf-line {
+  fill: none;
+  stroke: url(#flowGrad);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 3px rgba(56, 189, 248, 0.4));
+}
+
+/* Workflow Nodes */
+.wf-node {
+  position: absolute;
+  z-index: 2;
+}
+
+.wf-node-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: rgba(28, 28, 32, 0.98);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.wf-node-content:hover {
+  background: rgba(38, 38, 45, 0.98);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.wf-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.wf-icon-wrapper {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.wf-icon-wrapper svg {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.wf-icon-wrapper.wf-webhook {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}
+
+.wf-icon-wrapper.wf-http {
+  background: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+}
+
+.wf-icon-wrapper.wf-condition {
+  background: rgba(168, 85, 247, 0.2);
+  color: #a855f7;
+}
+
+.wf-icon-wrapper.wf-salesforce {
+  background: rgba(0, 161, 224, 0.15);
+}
+
+.wf-icon-wrapper.wf-sheets {
+  background: rgba(52, 168, 83, 0.15);
+}
+
+.wf-icon-wrapper.wf-hubspot {
+  background: rgba(255, 122, 89, 0.15);
+}
+
+.wf-logo {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.wf-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+}
+
+/* Connector Dots */
+.wf-connector-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #38bdf8;
+  border: 2px solid rgba(24, 24, 27, 1);
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(56, 189, 248, 0.5);
+}
+
+.wf-connector-dot.left {
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.wf-connector-dot.right {
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.wf-connector-dot.top {
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.wf-connector-dot.bottom {
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+/* Zoom Controls */
+.canvas-zoom {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: rgba(24, 24, 27, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+}
+
+.canvas-zoom span {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.zoom-btn {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.zoom-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+/* Responsive adjustments for config panel */
+@media (max-width: 1024px) {
+  .agent-config-panel {
+    max-width: 680px;
+  }
+
+  .workflow-builder-panel {
+    max-width: 780px;
+    height: 480px;
+  }
+
+  .workflow-sidebar {
+    width: 160px;
+  }
+}
+
+@media (max-width: 900px) {
+  .agent-config-panel {
+    max-width: 580px;
+  }
+
+  .workflow-builder-panel {
+    max-width: 95%;
+    height: 400px;
+  }
+
+  .workflow-sidebar {
+    width: 140px;
+    padding: 10px;
+  }
+
+  .node-item {
+    padding: 5px 6px;
+  }
+
+  .node-icon {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
+
+  .model-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .agent-canvas-overlay {
+    padding: 12px;
+  }
+
+  .agent-config-panel {
+    max-width: 100%;
+    max-height: 85%;
+  }
+
+  .workflow-builder-panel {
+    max-width: 100%;
+    height: 380px;
+  }
+
+  .workflow-sidebar {
+    display: none;
+  }
+
+  .workflow-topbar {
+    padding: 8px 12px;
+  }
+
+  .workflow-title {
+    font-size: 11px;
+  }
+
+  .config-topbar {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .config-section {
+    padding: 14px 16px;
+  }
+
+  .model-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .config-chips {
+    gap: 6px;
+  }
+
+  .config-chip {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .agent-canvas-overlay {
+    padding: 8px;
+  }
+
+  .agent-config-panel {
+    border-radius: 12px;
+  }
+
+  .config-tabs {
+    width: 100%;
+  }
+
+  .config-tab {
+    flex: 1;
+    justify-content: center;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .config-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .config-bottom {
+    padding: 12px 16px;
+  }
+
+  .btn-copilot,
+  .btn-preview {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
+/* =============================================
+   SUPERCHAT PANEL STYLES - MATCHING REFERENCE
+   ============================================= */
+
+.superchat-panel {
+  background: transparent;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 1000px;
+  height: 520px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+  display: flex;
+}
+
+/* ========== LEFT SIDEBAR ========== */
+.superchat-sidebar {
+  width: 180px;
+  background: rgba(24, 24, 27, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-top {
+  margin-bottom: 16px;
+}
+
+.superchat-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.superchat-logo svg {
+  flex-shrink: 0;
+}
+
+.superchat-panel .logo-text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+.superchat-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.superchat-nav .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.superchat-nav .nav-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.superchat-nav .nav-link.new-chat {
+  margin-bottom: 8px;
+}
+
+.superchat-nav .nav-link svg {
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.superchat-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: auto;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 8px;
+}
+
+.superchat-user:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.superchat-panel .user-avatar {
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.superchat-panel .user-name {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  flex: 1;
+}
+
+.superchat-user svg {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ========== MAIN CHAT AREA ========== */
+.superchat-main {
+  flex: 1;
+  background: rgba(24, 24, 27, 0.40);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.chat-header {
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(24, 24, 27, 0.6);
+}
+
+.chat-header h3 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  margin: 0;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-message {
+  max-width: 90%;
+}
+
+.chat-message.assistant {
+  align-self: flex-start;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chat-message.user {
+  align-self: flex-end;
+}
+
+.chat-message p {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 6px 0;
+}
+
+.chat-message.user p {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px 16px;
+  border-radius: 16px;
+  border-bottom-right-radius: 4px;
+  margin: 0;
+}
+
+.chat-message ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.chat-message li {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 6px;
+}
+
+.chat-message li strong {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.chat-message a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+.chat-message a:hover {
+  text-decoration: underline;
+}
+
+.chat-followup {
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 10px !important;
+  margin-top: 6px !important;
+}
+
+/* Chat Input Area */
+.chat-input-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: rgba(24, 24, 27, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0 0 16px 0;
+}
+
+.chat-input-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 6px 6px 6px 16px;
+}
+
+.connected-apps {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+}
+
+.app-logo-circle {
+  width: 28px;
+  height: 28px;
+  background: rgba(40, 40, 45, 0.95);
+  border: 2px solid rgba(60, 60, 65, 1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -8px;
+  position: relative;
+}
+
+.app-logo-circle:first-child {
+  margin-left: 0;
+  z-index: 3;
+}
+
+.app-logo-circle:nth-child(2) {
+  z-index: 2;
+}
+
+.app-logo-circle:nth-child(3) {
+  z-index: 1;
+}
+
+.app-logo-img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.apps-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 4px 12px;
+  margin-left: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.apps-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.chat-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 8px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 12px;
+  color: white;
+  outline: none;
+}
+
+.chat-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.send-btn {
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.send-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+}
+
+/* ========== FLOW VISUALIZER ========== */
+.flow-visualizer {
+  width: 200px;
+  background: rgba(24, 24, 27, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.visualizer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.visualizer-title-text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  flex: 1;
+}
+
+.flow-visualizer .step-count {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.flow-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  padding-left: 0;
+}
+
+.flow-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  padding: 8px 0;
+}
+
+/* Connector line between circles */
+.flow-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 18px;
+  top: 44px;
+  height: 16px;
+  width: 0;
+  border-left: 2px dashed rgba(255, 255, 255, 0.3);
+  z-index: 0;
+}
+
+.step-icon-wrapper {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.step-logo {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.step-card {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  flex: 1;
+}
+
+.step-dot {
+  width: 6px;
+  height: 6px;
+  background: #10b981;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.step-num {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.step-action {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  flex: 1;
+}
+
+.step-arrow {
+  color: rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .superchat-panel {
+    max-width: 900px;
+    height: 500px;
+  }
+
+  .superchat-sidebar {
+    width: 180px;
+  }
+
+  .flow-visualizer {
+    width: 200px;
+  }
+}
+
+@media (max-width: 900px) {
+  .superchat-panel {
+    max-width: 95%;
+    height: 480px;
+  }
+
+  .superchat-sidebar {
+    width: 160px;
+    padding: 16px 12px;
+  }
+
+  .flow-visualizer {
+    width: 180px;
+    padding: 16px 12px;
+  }
+
+  .superchat-nav .nav-link {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .superchat-panel {
+    height: 450px;
+  }
+
+  .superchat-sidebar {
+    display: none;
+  }
+
+  .flow-visualizer {
+    width: 160px;
+  }
+
+  .step-icon-wrapper {
+    width: 36px;
+    height: 36px;
+  }
+
+  .step-icon-wrapper svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .flow-visualizer {
+    display: none;
+  }
+
+  .chat-input-area {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .connected-apps {
+    width: 100%;
+    justify-content: center;
+  }
 }
 

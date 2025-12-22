@@ -98,7 +98,7 @@ const Header = () => {
             </div>
           </div>
           <div className="nav-right">
-            <a href="#" className="nav-link">Sign in</a>
+            <a href="#" className="nav-link" style={{ display: 'none' }}>Sign in</a>
             <button className="btn-primary" onClick={handleTalkToUsClick}>Talk to us</button>
           </div>
         </nav>

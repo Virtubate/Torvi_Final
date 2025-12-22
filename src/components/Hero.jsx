@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Hero.css'
 
 const Hero = () => {
@@ -12,11 +13,10 @@ const Hero = () => {
           <span className="badge-arrow">›</span>
         </div>
         <h1 className="hero-title">
-          AI agents that work for you.<br/>
-          Automate every and any operation.
+          AI agents and Workflows that work for you
         </h1>
-        <p className="hero-subtitle">Connect your tools, train your models, and let your agents handle the rest.</p>
-        <a href="#" className="btn-hero">Talk to us</a>
+        <p className="hero-subtitle">Automate every and any operation effortlessly</p>
+        <Link to="/talk-to-us" className="btn-hero">Book a demo</Link>
       </div>
     </section>
   )
