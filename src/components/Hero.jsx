@@ -15,7 +15,7 @@ const Hero = () => {
         <h1 className="hero-title">
           AI agents and Workflows that work for you
         </h1>
-        <p className="hero-subtitle">Automate every and any operation effortlessly</p>
+        <p className="hero-subtitle">Automate every and any operation effortlessly, just by prompting</p>
         <Link to="/talk-to-us" className="btn-hero">Book a demo</Link>
       </div>
     </section>

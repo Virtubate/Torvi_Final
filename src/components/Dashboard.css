@@ -2655,3 +2655,1741 @@ h2.gradient-rpa {
   }
 }
 
+/* =============================================
+   TRIGGERS OVERLAY STYLES - INSIGHTS VARIANT
+   Dark Glassmorphism Style (matching first dashboard)
+   ============================================= */
+
+.triggers-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.trigger-panel {
+  background: rgba(24, 24, 27, 0.60);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 300px;
+  height: 480px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.trigger-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(24, 24, 27, 0.95);
+  flex-shrink: 0;
+}
+
+.trigger-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trigger-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.trigger-icon.schedule-icon {
+  background: rgba(139, 92, 246, 0.2);
+  color: #a78bfa;
+}
+
+.trigger-icon.gmail-icon {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.trigger-icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.trigger-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.trigger-title-info h4 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 1px 0;
+}
+
+.trigger-title-info span {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.trigger-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-activate {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-activate:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-close-trigger {
+  width: 22px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.btn-close-trigger:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.trigger-content {
+  padding: 12px 14px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.trigger-field {
+  margin-bottom: 10px;
+}
+
+.trigger-field:last-child {
+  margin-bottom: 0;
+}
+
+.trigger-field.half {
+  flex: 1;
+  min-width: 0;
+}
+
+.trigger-fields-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.trigger-field label {
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 4px;
+}
+
+.trigger-field label .required {
+  color: #f87171;
+}
+
+.trigger-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.trigger-select:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.trigger-select span {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.trigger-select svg {
+  color: rgba(255, 255, 255, 0.4);
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+}
+
+.trigger-input {
+  width: 100%;
+  padding: 7px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.trigger-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.trigger-input:focus {
+  outline: none;
+  border-color: rgba(139, 92, 246, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.trigger-section-label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 12px 0 8px 0;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.time-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 4px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 10px;
+}
+
+.chip-remove {
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.chip-remove:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.days-row {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.day-btn {
+  padding: 5px 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.day-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.day-btn.active {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: white;
+}
+
+.day-btn:not(.active) {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.trigger-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.trigger-checkbox input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  cursor: pointer;
+  accent-color: #a78bfa;
+}
+
+.trigger-checkbox label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  margin: 0;
+}
+
+/* Responsive adjustments for triggers overlay */
+@media (max-width: 1200px) {
+  .triggers-overlay {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .trigger-panel {
+    max-width: 280px;
+    height: 460px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .triggers-overlay {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+    overflow-y: auto;
+  }
+
+  .trigger-panel {
+    max-width: 350px;
+    height: auto;
+    max-height: 440px;
+  }
+}
+
+@media (max-width: 768px) {
+  .triggers-overlay {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .trigger-panel {
+    max-width: 100%;
+    height: auto;
+    max-height: 350px;
+  }
+
+  .trigger-header {
+    padding: 10px 12px;
+  }
+
+  .trigger-content {
+    padding: 10px 12px;
+  }
+
+  .trigger-fields-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .trigger-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .trigger-icon img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* =============================================
+   TOOLS & KNOWLEDGE OVERLAY STYLES
+   ============================================= */
+
+.tools-knowledge-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.tk-panel {
+  background: rgba(24, 24, 27, 0.60);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  padding: 20px;
+}
+
+.tk-section {
+  margin-bottom: 20px;
+}
+
+.tk-section:last-child {
+  margin-bottom: 0;
+}
+
+.tk-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.tk-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.tk-section-title svg {
+  color: rgba(255, 255, 255, 0.4);
+  width: 14px;
+  height: 14px;
+}
+
+.tk-add-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tk-add-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.tk-add-btn span {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.tk-chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  min-height: 50px;
+}
+
+.tk-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.2s;
+}
+
+.tk-chip:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.tk-chip-default {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.tk-chip-default svg {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.tk-chip-logo {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.tk-info-icon {
+  color: rgba(255, 255, 255, 0.35);
+  margin-left: 2px;
+}
+
+.tk-zendesk-icon {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tk-confluence-icon {
+  color: #0052CC;
+}
+
+.tk-chip-remove {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 2px;
+  line-height: 1;
+  transition: all 0.2s;
+}
+
+.tk-chip-remove:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive adjustments for tools & knowledge overlay */
+@media (max-width: 768px) {
+  .tools-knowledge-overlay {
+    padding: 12px;
+  }
+
+  .tk-panel {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .tk-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .tk-chips-container {
+    padding: 12px;
+  }
+
+  .tk-chip {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tk-panel {
+    padding: 14px;
+  }
+
+  .tk-section-title {
+    font-size: 11px;
+  }
+
+  .tk-add-btn {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+}
+
+/* =============================================
+   PROMPT & MODEL OVERLAY STYLES
+   ============================================= */
+
+.prompt-model-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.pm-panel {
+  background: rgba(24, 24, 27, 0.60);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 580px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  padding: 20px;
+}
+
+.pm-section {
+  margin-bottom: 20px;
+}
+
+.pm-section:last-child {
+  margin-bottom: 0;
+}
+
+.pm-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.pm-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.pm-section-title svg {
+  color: rgba(255, 255, 255, 0.4);
+  width: 14px;
+  height: 14px;
+}
+
+.pm-model-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+}
+
+.pm-model-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pm-model-field label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pm-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pm-select:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.pm-select span {
+  flex: 1;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pm-gemini-icon {
+  color: #60a5fa;
+  flex-shrink: 0;
+}
+
+.pm-select-arrow {
+  color: rgba(255, 255, 255, 0.4);
+  flex-shrink: 0;
+}
+
+.pm-expand-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pm-expand-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.pm-expand-btn svg {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.pm-instructions-box {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.pm-instructions-box p {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.pm-hint {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.pm-hint kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 2px;
+}
+
+/* Responsive adjustments for prompt & model overlay */
+@media (max-width: 768px) {
+  .prompt-model-overlay {
+    padding: 12px;
+  }
+
+  .pm-panel {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .pm-model-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .pm-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pm-panel {
+    padding: 14px;
+  }
+
+  .pm-section-title {
+    font-size: 11px;
+  }
+
+  .pm-select {
+    padding: 8px 10px;
+  }
+
+  .pm-select span {
+    font-size: 10px;
+  }
+
+  .pm-instructions-box {
+    padding: 12px;
+  }
+
+  .pm-instructions-box p {
+    font-size: 10px;
+  }
+}
+
+/* =============================================
+   MONITOR & ITERATE OVERLAY STYLES
+   ============================================= */
+
+.monitor-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.monitor-panel {
+  background: rgba(24, 24, 27, 0.60);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 680px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.monitor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(24, 24, 27, 0.8);
+}
+
+.monitor-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.monitor-robot-icon {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.monitor-title-row span {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.monitor-tabs {
+  display: flex;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 3px;
+}
+
+.monitor-tab {
+  padding: 6px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.monitor-tab:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.monitor-tab.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.monitor-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.monitor-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  flex: 1;
+  max-width: 140px;
+}
+
+.monitor-search svg {
+  color: rgba(255, 255, 255, 0.4);
+  flex-shrink: 0;
+}
+
+.monitor-search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+}
+
+.monitor-search input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.monitor-filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.monitor-filter-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.monitor-filter-btn span {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.monitor-filter-btn svg {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.monitor-refresh-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-left: auto;
+}
+
+.monitor-refresh-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.monitor-refresh-btn svg {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.monitor-activity-tabs {
+  display: flex;
+  gap: 16px;
+  padding: 0 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.activity-tab {
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.activity-tab:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.activity-tab.active {
+  color: white;
+  border-bottom-color: white;
+}
+
+.monitor-table {
+  overflow: hidden;
+}
+
+.monitor-table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 0.7fr 0.8fr;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.monitor-table-header > div {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.monitor-table-body {
+  padding: 0;
+}
+
+.monitor-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 0.7fr 0.8fr;
+  gap: 8px;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.monitor-row:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.monitor-row.error-row {
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.monitor-row.error-row:hover {
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.monitor-row.error-row.expanded {
+  border-bottom: none;
+}
+
+/* Execution Column */
+.col-exec {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.exec-id {
+  font-family: 'SF Mono', 'Consolas', monospace;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.exec-name {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.col-date {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.col-duration {
+  font-family: 'SF Mono', 'Consolas', monospace;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.col-status {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.status-progress,
+.status-complete,
+.status-error {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.status-progress {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.15);
+}
+
+.status-complete {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.15);
+}
+
+.status-error {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.15);
+}
+
+/* Error Debug Dropdown */
+.error-dropdown-row {
+  background: rgba(239, 68, 68, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 0 16px 12px 16px;
+}
+
+.error-debug-panel {
+  background: rgba(20, 20, 22, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.debug-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.debug-header svg {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.debug-header span {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.debug-arrow {
+  color: rgba(255, 255, 255, 0.5);
+  transform: rotate(180deg);
+  margin-left: auto;
+}
+
+.debug-tools-list {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.debug-tool-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+
+.debug-tool-item.error {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.15);
+}
+
+.debug-tool-item.success {
+  background: rgba(74, 222, 128, 0.05);
+  border-color: rgba(74, 222, 128, 0.1);
+}
+
+.debug-tool-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.tool-icon-wrap {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tool-icon-wrap img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.tool-name {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  flex-shrink: 0;
+}
+
+.tool-separator {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.25);
+  margin: 0 8px;
+}
+
+.tool-error-msg {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tool-status-badge {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-align: center;
+  width: 50px;
+  flex-shrink: 0;
+}
+
+.tool-status-badge.error {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.15);
+}
+
+.tool-status-badge.success {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.15);
+}
+
+.debug-actions {
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.debug-retry-btn,
+.debug-logs-btn {
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.debug-retry-btn {
+  background: rgba(248, 113, 113, 0.15);
+  border: 1px solid rgba(248, 113, 113, 0.25);
+  color: #f87171;
+}
+
+.debug-retry-btn:hover {
+  background: rgba(248, 113, 113, 0.25);
+}
+
+.debug-logs-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.debug-logs-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Responsive adjustments for monitor overlay */
+@media (max-width: 768px) {
+  .monitor-overlay {
+    padding: 10px;
+  }
+
+  .monitor-panel {
+    max-width: 100%;
+  }
+
+  .monitor-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .monitor-filters {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .monitor-search {
+    max-width: 100%;
+    flex: none;
+    width: 100%;
+  }
+
+  .monitor-table-header,
+  .monitor-row {
+    grid-template-columns: 1.5fr 1fr 0.5fr 0.7fr;
+    padding: 8px 12px;
+  }
+
+  .tool-error-msg {
+    display: none;
+  }
+
+  .tool-separator {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .monitor-table-header,
+  .monitor-row {
+    grid-template-columns: 1fr 0.8fr 0.5fr;
+  }
+
+  .col-status {
+    display: none;
+  }
+
+  .monitor-activity-tabs {
+    gap: 12px;
+    overflow-x: auto;
+  }
+
+  .activity-tab {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+}
+
+/* =============================================
+   TEST & DEPLOY OVERLAY STYLES
+   ============================================= */
+
+.test-deploy-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.td-panel {
+  background: rgba(24, 24, 27, 0.60);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 750px;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Left Section - Output */
+.td-output-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.td-output-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.td-tabs-left,
+.td-tabs-right {
+  display: flex;
+  gap: 2px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 3px;
+}
+
+.td-tab {
+  padding: 5px 10px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.td-tab:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.td-tab.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.td-output-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.td-nodes {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.td-success {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.td-success svg {
+  color: #4ade80;
+}
+
+.td-success span {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #4ade80;
+}
+
+.td-time {
+  color: rgba(255, 255, 255, 0.4) !important;
+  font-weight: 400 !important;
+}
+
+.td-response-box {
+  margin: 10px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+
+.td-response-label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.td-response-content {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+}
+
+.td-response-content p {
+  margin: 0 0 6px 0;
+}
+
+.td-response-content ol {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.td-response-content li {
+  margin-bottom: 3px;
+}
+
+.td-response-content a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.td-response-content a:hover {
+  color: white;
+}
+
+/* Right Section - Config */
+.td-config-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.td-config-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.td-app-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.td-app-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.td-app-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.td-app-name {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.td-app-desc {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.td-test-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: #3b82f6;
+  border: none;
+  border-radius: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.td-test-btn:hover {
+  background: #2563eb;
+}
+
+.td-test-btn svg {
+  color: white;
+}
+
+.td-config-body {
+  padding: 10px 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.td-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.td-field label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.td-field .required {
+  color: #f87171;
+}
+
+.td-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.td-select span {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.td-select svg {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.td-textarea {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  min-height: 80px;
+}
+
+.td-textarea span {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+}
+
+.td-config-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.td-shortcut {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.td-shortcut kbd {
+  display: inline-block;
+  padding: 2px 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 2px;
+}
+
+.td-settings-icon {
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.td-settings-icon:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive for Test & Deploy */
+@media (max-width: 768px) {
+  .test-deploy-overlay {
+    padding: 10px;
+  }
+
+  .td-panel {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .td-output-section {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .td-output-header {
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+}
+

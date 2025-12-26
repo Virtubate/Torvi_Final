@@ -64,28 +64,28 @@ const Dashboard = ({ variant = 'default' }) => {
 
   const insightsSections = {
     'create-agent': {
-      title: 'Create Agent/ Workflow/ RPA Flow',
-      subtitle: 'Ground agents in your brand standards, compliance rules, and workflows so every interaction is consistent and on-policy.',
+      title: 'Set Your Triggers',
+      subtitle: 'Define what kicks off your automation. Choose from a variety of triggers like incoming messages, scheduled events, form submissions, or custom webhooks, and set the rules for when and how they activate. Or invoke it on-demand from your preferred platform whenever you need.',
       bgImage: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=2076&auto=format&fit=crop'
     },
     'define-policies': {
-      title: 'Define Expectations & Policies',
-      subtitle: 'Set clear guardrails in plain language. Decide what should be automated, when to escalate, and how to manage sensitive cases.',
+      title: 'Connect Your Tools & Knowledge',
+      subtitle: 'Select the applications, databases, and knowledge bases your agent needs access to. Integrate with your existing stack so your agent can retrieve context, take actions, and work with real data.',
       bgImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop'
     },
     'design-logic': {
-      title: 'Design the logic',
-      subtitle: 'Map conversation flows and escalation paths. Extend capabilities through APIs and custom code to connect seamlessly with your systems.',
+      title: 'Configure Your Prompt & Model',
+      subtitle: 'Write your instructions in plain language. Tell the agent what to do, how to respond, and when to use its connected tools. Choose the AI model that best fits your use case—whether you need speed, accuracy, or advanced reasoning.',
       bgImage: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2070&auto=format&fit=crop'
     },
     'test-launch': {
-      title: 'Test and Launch',
-      subtitle: 'Validate performance, run regression tests, A/B experiments, and deploy safely with instant rollback.',
+      title: 'Test & Deploy',
+      subtitle: 'Validate responses, simulate real scenarios, and fine-tune until it works exactly as expected. When ready, deploy it.',
       bgImage: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=2076&auto=format&fit=crop'
     },
     'monitor-improve': {
-      title: 'Monitor and Improve',
-      subtitle: 'Review outputs, operations and confirm improvements before release.',
+      title: 'Monitor & Iterate',
+      subtitle: 'Track every interaction in your activity log. Spot errors, review edge cases, and make adjustments on the fly—no redeployment needed.',
       bgImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop'
     }
   }
@@ -99,11 +99,597 @@ const Dashboard = ({ variant = 'default' }) => {
         <div className="dashboard-container">
           {/* Left Main Area (70%) - Create Insight Modal */}
           <div className="dashboard-main dashboard-main-left">
-            <div 
+            <div
               className="dashboard-background"
               style={{ backgroundImage: `url('${sections[activeSection].bgImage}')` }}
             >
-              {/* Overlay removed - background image only */}
+              {/* Monitor & Iterate Overlay */}
+              {activeSection === 'monitor-improve' && (
+                <div className="monitor-overlay">
+                  <div className="monitor-panel">
+                    {/* Header */}
+                    <div className="monitor-header">
+                      <div className="monitor-title-row">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="monitor-robot-icon">
+                          <rect x="3" y="8" width="18" height="12" rx="2" stroke="currentColor" strokeWidth="2"/>
+                          <circle cx="9" cy="14" r="2" fill="currentColor"/>
+                          <circle cx="15" cy="14" r="2" fill="currentColor"/>
+                          <path d="M12 2v4M8 6h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                        </svg>
+                        <span>Sales Pipeline Agent</span>
+                      </div>
+                      <div className="monitor-tabs">
+                        <button className="monitor-tab">Configure</button>
+                        <button className="monitor-tab active">Activity</button>
+                      </div>
+                    </div>
+
+                    {/* Filters Row */}
+                    <div className="monitor-filters">
+                      <div className="monitor-search">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                          <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2"/>
+                          <path d="M21 21l-4.35-4.35" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                        </svg>
+                        <input type="text" placeholder="Search executions..." />
+                      </div>
+                      <div className="monitor-filter-btn">
+                        <span>Any status</span>
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+                          <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                        </svg>
+                      </div>
+                      <button className="monitor-refresh-btn">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                          <path d="M1 4v6h6M23 20v-6h-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </button>
+                    </div>
+
+                    {/* Activity Tabs */}
+                    <div className="monitor-activity-tabs">
+                      <button className="activity-tab active">All executions</button>
+                      <button className="activity-tab">Errors only</button>
+                      <button className="activity-tab">Needs action</button>
+                    </div>
+
+                    {/* Table */}
+                    <div className="monitor-table">
+                      <div className="monitor-table-header">
+                        <div className="col-exec">EXECUTION</div>
+                        <div className="col-date">DATE</div>
+                        <div className="col-duration">DURATION</div>
+                        <div className="col-status">STATUS</div>
+                      </div>
+                      <div className="monitor-table-body">
+                        {/* Row 1 - In Progress */}
+                        <div className="monitor-row">
+                          <div className="col-exec">
+                            <span className="exec-id">#4521</span>
+                            <span className="exec-name">Daily lead sync workflow</span>
+                          </div>
+                          <div className="col-date">Today, 2:15am</div>
+                          <div className="col-duration">Running...</div>
+                          <div className="col-status"><span className="status-progress">In progress</span></div>
+                        </div>
+                        {/* Row 2 - Complete */}
+                        <div className="monitor-row">
+                          <div className="col-exec">
+                            <span className="exec-id">#4520</span>
+                            <span className="exec-name">Customer onboarding flow</span>
+                          </div>
+                          <div className="col-date">Today, 1:42am</div>
+                          <div className="col-duration">2.3s</div>
+                          <div className="col-status"><span className="status-complete">Complete</span></div>
+                        </div>
+                        {/* Row 3 - Error with multi-tool debug */}
+                        <div className="monitor-row error-row expanded">
+                          <div className="col-exec">
+                            <span className="exec-id">#4519</span>
+                            <span className="exec-name">Weekly report generation</span>
+                          </div>
+                          <div className="col-date">Yesterday, 11:30pm</div>
+                          <div className="col-duration">4.1s</div>
+                          <div className="col-status"><span className="status-error">2 Errors</span></div>
+                        </div>
+                        {/* Error Debug Dropdown */}
+                        <div className="error-dropdown-row">
+                          <div className="error-debug-panel">
+                            <div className="debug-header">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                              <span>Execution Debug Log</span>
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="debug-arrow">
+                                <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            </div>
+                            <div className="debug-tools-list">
+                              <div className="debug-tool-item error">
+                                <div className="debug-tool-content">
+                                  <div className="tool-icon-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg" alt="Slack" />
+                                  </div>
+                                  <span className="tool-name">Slack - Send Message</span>
+                                  <span className="tool-separator">|</span>
+                                  <span className="tool-error-msg">OAuth token expired at step 3</span>
+                                </div>
+                                <span className="tool-status-badge error">Failed</span>
+                              </div>
+                              <div className="debug-tool-item error">
+                                <div className="debug-tool-content">
+                                  <div className="tool-icon-wrap">
+                                    <img src="https://www.gstatic.com/images/branding/product/1x/sheets_2020q4_32dp.png" alt="Sheets" />
+                                  </div>
+                                  <span className="tool-name">Google Sheets - Write Row</span>
+                                  <span className="tool-separator">|</span>
+                                  <span className="tool-error-msg">API quota reached at step 5</span>
+                                </div>
+                                <span className="tool-status-badge error">Failed</span>
+                              </div>
+                              <div className="debug-tool-item success">
+                                <div className="debug-tool-content">
+                                  <div className="tool-icon-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce" />
+                                  </div>
+                                  <span className="tool-name">Salesforce - Query Records</span>
+                                </div>
+                                <span className="tool-status-badge success">Passed</span>
+                              </div>
+                            </div>
+                            <div className="debug-actions">
+                              <button className="debug-retry-btn">Retry Execution</button>
+                              <button className="debug-logs-btn">View Full Logs</button>
+                            </div>
+                          </div>
+                        </div>
+                        {/* Row 4 - Complete */}
+                        <div className="monitor-row">
+                          <div className="col-exec">
+                            <span className="exec-id">#4518</span>
+                            <span className="exec-name">Email follow-up sequence</span>
+                          </div>
+                          <div className="col-date">Yesterday, 9:15pm</div>
+                          <div className="col-duration">1.8s</div>
+                          <div className="col-status"><span className="status-complete">Complete</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Test & Deploy Overlay */}
+              {activeSection === 'test-launch' && (
+                <div className="test-deploy-overlay">
+                  <div className="td-panel">
+                    {/* Left Section - Output */}
+                    <div className="td-output-section">
+                      <div className="td-output-header">
+                        <div className="td-tabs-left">
+                          <button className="td-tab">Input</button>
+                          <button className="td-tab active">Output</button>
+                        </div>
+                        <div className="td-tabs-right">
+                          <button className="td-tab">Data</button>
+                          <button className="td-tab active">Activity</button>
+                          <button className="td-tab">JSON</button>
+                        </div>
+                      </div>
+                      <div className="td-output-meta">
+                        <span className="td-nodes">0 connected nodes</span>
+                        <div className="td-success">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                            <path d="M8 12l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                          <span>Success</span>
+                          <span className="td-time">· 5899ms</span>
+                        </div>
+                      </div>
+                      <div className="td-response-box">
+                        <div className="td-response-label">AI RESPONSE</div>
+                        <div className="td-response-content">
+                          <p>Here are the top 3 files in your drive:</p>
+                          <ol>
+                            <li><a href="#">Sentiment Analysis</a></li>
+                            <li><a href="#">Untitled spreadsheet</a></li>
+                            <li><a href="#">Credentials</a></li>
+                          </ol>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Right Section - Config */}
+                    <div className="td-config-section">
+                      <div className="td-config-header">
+                        <div className="td-app-info">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg" alt="Google Drive" className="td-app-icon" />
+                          <div className="td-app-text">
+                            <span className="td-app-name">Google Drive</span>
+                            <span className="td-app-desc">File storage operations</span>
+                          </div>
+                        </div>
+                        <button className="td-test-btn">
+                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 3l14 9-14 9V3z" fill="currentColor"/>
+                          </svg>
+                          Test step
+                        </button>
+                      </div>
+                      <div className="td-config-body">
+                        <div className="td-field">
+                          <label>Credential to connect with <span className="required">*</span></label>
+                          <div className="td-select">
+                            <span>Google Drive-1</span>
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+                              <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="td-field">
+                          <label>Describe what you want this node to do</label>
+                          <div className="td-textarea">
+                            <span>Fetch the top 3 files in my drive</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="td-config-footer">
+                        <span className="td-shortcut">Press <kbd>Cmd</kbd> + <kbd>Enter</kbd> to test</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="td-settings-icon">
+                          <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2"/>
+                          <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Prompt & Model Overlay */}
+              {activeSection === 'design-logic' && (
+                <div className="prompt-model-overlay">
+                  <div className="pm-panel">
+                    {/* Model Section */}
+                    <div className="pm-section">
+                      <div className="pm-section-header">
+                        <div className="pm-section-title">
+                          <span>Model:</span>
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                            <path d="M12 16v-4M12 8h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                          </svg>
+                        </div>
+                      </div>
+                      <div className="pm-model-grid">
+                        <div className="pm-model-field">
+                          <label>LLM</label>
+                          <div className="pm-select">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="pm-gemini-icon">
+                              <path d="M12 2L9 9l-7 3 7 3 3 7 3-7 7-3-7-3-3-7z" fill="currentColor"/>
+                            </svg>
+                            <span>Google Gemini</span>
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" className="pm-select-arrow">
+                              <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="pm-model-field">
+                          <label>CREDENTIALS</label>
+                          <div className="pm-select">
+                            <span>Google Gemini Account 1</span>
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" className="pm-select-arrow">
+                              <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="pm-model-field">
+                          <label>MODEL</label>
+                          <div className="pm-select">
+                            <span>Gemini 2.5 Flash</span>
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" className="pm-select-arrow">
+                              <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Instructions Section */}
+                    <div className="pm-section">
+                      <div className="pm-section-header">
+                        <div className="pm-section-title">
+                          <span>Instructions to follow:</span>
+                        </div>
+                        <button className="pm-expand-btn">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                          Expand
+                        </button>
+                      </div>
+                      <div className="pm-instructions-box">
+                        <p>Example: Take a look at Product Management, find all overdue tasks that have dependencies, and Send Channel Message to the product team with a list of the overdue tasks, who they're assigned to, and the dependencies. Include a link to the tasks in the message.</p>
+                      </div>
+                      <div className="pm-hint">
+                        Use <kbd>/</kbd> to add tools & knowledge sources
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Tools & Knowledge Overlay */}
+              {activeSection === 'define-policies' && (
+                <div className="tools-knowledge-overlay">
+                  <div className="tk-panel">
+                    {/* Tools Section */}
+                    <div className="tk-section">
+                      <div className="tk-section-header">
+                        <div className="tk-section-title">
+                          <span>Tools this agent can use:</span>
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                            <path d="M12 16v-4M12 8h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                          </svg>
+                        </div>
+                        <button className="tk-add-btn">
+                          <span>+</span> Add Tools
+                        </button>
+                      </div>
+                      <div className="tk-chips-container">
+                        <div className="tk-chip tk-chip-default">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                          </svg>
+                          <span>Default Tools: Visit Site & Web Search</span>
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="tk-info-icon">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                            <path d="M12 16v-4M12 8h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                          </svg>
+                        </div>
+                        <div className="tk-chip">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce" className="tk-chip-logo" />
+                          <span>Salesforce</span>
+                          <button className="tk-chip-remove">×</button>
+                        </div>
+                        <div className="tk-chip">
+                          <img src="https://www.gstatic.com/images/branding/product/1x/gmail_2020q4_32dp.png" alt="Gmail" className="tk-chip-logo" />
+                          <span>Gmail</span>
+                          <button className="tk-chip-remove">×</button>
+                        </div>
+                        <div className="tk-chip">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="tk-zendesk-icon">
+                            <path d="M12 2L2 12h10V2zM12 22l10-10H12v10z" fill="currentColor"/>
+                          </svg>
+                          <span>Zendesk</span>
+                          <button className="tk-chip-remove">×</button>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Knowledge Sources Section */}
+                    <div className="tk-section">
+                      <div className="tk-section-header">
+                        <div className="tk-section-title">
+                          <span>Knowledge sources:</span>
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                            <path d="M12 16v-4M12 8h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                          </svg>
+                        </div>
+                        <button className="tk-add-btn">
+                          <span>+</span> Add Knowledge Sources
+                        </button>
+                      </div>
+                      <div className="tk-chips-container">
+                        <div className="tk-chip">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="tk-confluence-icon">
+                            <path d="M4.5 6.5L12 2l7.5 4.5v11L12 22l-7.5-4.5v-11z" stroke="currentColor" strokeWidth="2"/>
+                            <path d="M12 8v8M8 12h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                          </svg>
+                          <span>Confluence Cloud</span>
+                          <button className="tk-chip-remove">×</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Trigger Configuration Overlay */}
+              {activeSection === 'create-agent' && (
+                <div className="triggers-overlay">
+                  {/* Schedule Trigger Panel */}
+                  <div className="trigger-panel">
+                    <div className="trigger-header">
+                      <div className="trigger-title-row">
+                        <div className="trigger-icon schedule-icon">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                            <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                          </svg>
+                        </div>
+                        <div className="trigger-title-info">
+                          <h4>Schedule Trigger</h4>
+                          <span>Trigger on a schedule</span>
+                        </div>
+                      </div>
+                      <div className="trigger-header-actions">
+                        <button className="btn-activate">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 3l14 9-14 9V3z" fill="currentColor"/>
+                          </svg>
+                          Activate
+                        </button>
+                        <button className="btn-close-trigger">×</button>
+                      </div>
+                    </div>
+
+                    <div className="trigger-content">
+                      <div className="trigger-field">
+                        <label>Trigger Rules</label>
+                        <div className="trigger-select">
+                          <span>Daily</span>
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div className="trigger-field">
+                        <label>Timezone</label>
+                        <div className="trigger-select">
+                          <span>PST (Pacific Standard Time)</span>
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div className="trigger-section-label">DAILY SETTINGS</div>
+
+                      <div className="trigger-field">
+                        <label>Times of the Day</label>
+                        <div className="trigger-select">
+                          <span>1 time selected</span>
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div className="time-chip">
+                        9:00 AM
+                        <span className="chip-remove">×</span>
+                      </div>
+
+                      <div className="trigger-field">
+                        <label>Days of the Week</label>
+                        <div className="days-row">
+                          <button className="day-btn active">Mon</button>
+                          <button className="day-btn active">Tue</button>
+                          <button className="day-btn active">Wed</button>
+                          <button className="day-btn active">Thu</button>
+                          <button className="day-btn active">Fri</button>
+                          <button className="day-btn active">Sat</button>
+                          <button className="day-btn active">Sun</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Gmail Trigger Panel */}
+                  <div className="trigger-panel">
+                    <div className="trigger-header">
+                      <div className="trigger-title-row">
+                        <div className="trigger-icon gmail-icon">
+                          <img src="https://www.gstatic.com/images/branding/product/1x/gmail_2020q4_32dp.png" alt="Gmail" />
+                        </div>
+                        <div className="trigger-title-info">
+                          <h4>Gmail Trigger</h4>
+                          <span>Trigger on new emails</span>
+                        </div>
+                      </div>
+                      <div className="trigger-header-actions">
+                        <button className="btn-activate">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 3l14 9-14 9V3z" fill="currentColor"/>
+                          </svg>
+                          Activate
+                        </button>
+                        <button className="btn-close-trigger">×</button>
+                      </div>
+                    </div>
+
+                    <div className="trigger-content">
+                      <div className="trigger-field">
+                        <label>Credential to connect with <span className="required">*</span></label>
+                        <div className="trigger-select">
+                          <span>Gmail-1</span>
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div className="trigger-section-label">POLL SCHEDULE</div>
+
+                      <div className="trigger-fields-row">
+                        <div className="trigger-field half">
+                          <label>Trigger Rules</label>
+                          <div className="trigger-select">
+                            <span>Daily</span>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                              <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="trigger-field half">
+                          <label>Timezone</label>
+                          <div className="trigger-select">
+                            <span>PST</span>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                              <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="trigger-fields-row">
+                        <div className="trigger-field half">
+                          <label>Times of the Day</label>
+                          <div className="trigger-select">
+                            <span>1 time selected</span>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                              <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="trigger-field half">
+                          <label>Days of the Week</label>
+                          <div className="trigger-select">
+                            <span>Every day</span>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                              <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="trigger-section-label">FILTERS (OPTIONAL)</div>
+
+                      <div className="trigger-fields-row">
+                        <div className="trigger-field half">
+                          <label>Label</label>
+                          <div className="trigger-select">
+                            <span>Inbox</span>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                              <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="trigger-field half">
+                          <label>From (sender)</label>
+                          <input type="text" placeholder="john@example.com" className="trigger-input" />
+                        </div>
+                      </div>
+
+                      <div className="trigger-field">
+                        <label>Subject contains</label>
+                        <input type="text" placeholder="e.g. Invoice" className="trigger-input" />
+                      </div>
+
+                      <div className="trigger-checkbox">
+                        <input type="checkbox" id="unread-only" />
+                        <label htmlFor="unread-only">Only unread emails</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
