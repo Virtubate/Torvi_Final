@@ -5,7 +5,9 @@
       "Bash(npm run dev:*)",
       "Bash(timeout:*)",
       "Bash(dir:*)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(cmd /c copy:*)",
+      "Bash(cmd /c dir \"C:\\\\Users\\\\srira\\\\Desktop\\\\Torvi_Final\\\\Torvi_Final\\\\public\\\\gc.jpg\")"
     ]
   }
 }

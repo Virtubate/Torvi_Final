@@ -1,0 +1,477 @@
+.careers-page {
+  min-height: 100vh;
+  background: #1a1a1a;
+}
+
+/* Content Section */
+.careers-section {
+  min-height: 113vh;
+  position: relative;
+  padding: 100px 120px;
+  background-image: url('/c6.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.careers-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(15, 15, 15, 0.9) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.careers-values-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.careers-values-title {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0 0 80px 0;
+}
+
+.careers-values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px 80px;
+}
+
+.careers-value-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 24px;
+}
+
+.careers-value-number {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.careers-value-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+}
+
+.careers-value-description {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .careers-section {
+    padding: 80px 60px;
+  }
+
+  .careers-values-title {
+    font-size: 40px;
+    margin-bottom: 60px;
+  }
+
+  .careers-values-grid {
+    gap: 50px 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .careers-section {
+    padding: 60px 30px;
+  }
+
+  .careers-values-title {
+    font-size: 32px;
+    margin-bottom: 50px;
+  }
+
+  .careers-values-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .careers-section {
+    padding: 50px 20px;
+  }
+
+  .careers-values-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .careers-values-grid {
+    gap: 32px;
+  }
+
+  .careers-value-description {
+    font-size: 13px;
+  }
+}
+
+/* Join Our Team Section */
+.careers-jobs-section {
+  background: #f9f9f9;
+  padding: 100px 120px;
+}
+
+.careers-jobs-title {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: #0a0a0a;
+  text-align: center;
+  margin: 0 0 60px 0;
+}
+
+.careers-jobs-list {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.careers-job-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  align-items: center;
+  gap: 40px;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.careers-job-row:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.careers-job-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #0a0a0a;
+}
+
+.careers-job-location {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #666666;
+}
+
+.careers-job-type {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #666666;
+}
+
+.careers-job-apply {
+  font-family: 'Outfit', sans-serif;
+  background: #0a0a0a;
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.careers-job-apply:hover {
+  background: #2a2a2a;
+  transform: translateY(-1px);
+}
+
+/* Jobs Section Responsive */
+@media (max-width: 1024px) {
+  .careers-jobs-section {
+    padding: 80px 60px;
+  }
+
+  .careers-jobs-title {
+    font-size: 40px;
+    margin-bottom: 50px;
+  }
+
+  .careers-job-row {
+    grid-template-columns: 1.5fr 1fr 1fr auto;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .careers-jobs-section {
+    padding: 60px 30px;
+  }
+
+  .careers-jobs-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .careers-job-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 24px;
+    padding: 24px 0;
+  }
+
+  .careers-job-title {
+    font-size: 16px;
+    grid-column: 1 / -1;
+  }
+
+  .careers-job-location,
+  .careers-job-type {
+    font-size: 14px;
+  }
+
+  .careers-job-apply {
+    grid-column: 1 / -1;
+    justify-self: start;
+    padding: 10px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .careers-jobs-section {
+    padding: 50px 20px;
+  }
+
+  .careers-jobs-title {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+
+  .careers-job-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 20px 0;
+  }
+
+  .careers-job-title {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .careers-job-location,
+  .careers-job-type {
+    font-size: 13px;
+  }
+
+  .careers-job-apply {
+    margin-top: 12px;
+  }
+}
+
+/* Remove gap between CTA and footer */
+body:has(.careers-page) .footer-section {
+  border-top: none;
+}
+
+/* Navbar customization for Careers page - same as Talk to Us */
+body:has(.careers-page) .header {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08),
+              0 0 0 1px rgba(0, 0, 0, 0.02) inset;
+}
+
+body:has(.careers-page) .header:not(.header-hidden):hover {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12),
+              0 0 0 1px rgba(0, 0, 0, 0.04) inset;
+}
+
+/* Logo and menu items to black */
+body:has(.careers-page) .logo-wordmark,
+body:has(.careers-page) .logo-glyph {
+  color: #000000;
+}
+
+body:has(.careers-page) .dropdown-btn,
+body:has(.careers-page) .nav-link {
+  color: #000000;
+}
+
+body:has(.careers-page) .dropdown-btn:hover,
+body:has(.careers-page) .nav-link:hover {
+  color: #333333;
+}
+
+/* Talk to us button to black */
+body:has(.careers-page) .btn-primary {
+  background: #000000;
+  color: white;
+}
+
+body:has(.careers-page) .btn-primary:hover {
+  background: #2a2a2a;
+}
+
+/* Hero Section */
+.careers-hero {
+  background: #ffffff;
+  padding: 160px 80px 80px;
+  min-height: 56vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.careers-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #374151;
+  margin-bottom: 32px;
+}
+
+.careers-title {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1.15;
+  color: #0a0a0a;
+  margin: 0 0 28px 0;
+  max-width: 900px;
+}
+
+.careers-tagline {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #6b7280;
+  max-width: 580px;
+  margin: 0 0 44px 0;
+}
+
+.careers-btn {
+  font-family: 'Outfit', sans-serif;
+  background: #0a0a0a;
+  color: #ffffff;
+  border: none;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.careers-btn:hover {
+  background: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .careers-hero {
+    padding: 140px 40px 70px;
+    min-height: 50vh;
+  }
+
+  .careers-title {
+    font-size: 52px;
+  }
+
+  .careers-tagline {
+    font-size: 17px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  body:has(.careers-page) .header {
+    background: rgba(255, 255, 255, 0.75);
+  }
+
+  .careers-hero {
+    padding: 120px 30px 60px;
+    min-height: 42vh;
+  }
+
+  .careers-title {
+    font-size: 40px;
+  }
+
+  .careers-tagline {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .careers-btn {
+    padding: 12px 28px;
+    font-size: 15px;
+  }
+
+  .careers-label {
+    padding: 7px 14px;
+    font-size: 11px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  body:has(.careers-page) .header {
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .careers-hero {
+    padding: 120px 20px 60px;
+    min-height: auto;
+  }
+
+  .careers-title {
+    font-size: 32px;
+  }
+
+  .careers-label {
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+
+  .careers-tagline {
+    font-size: 15px;
+  }
+
+  .careers-btn {
+    padding: 11px 24px;
+    font-size: 14px;
+  }
+}

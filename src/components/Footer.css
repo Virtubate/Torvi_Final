@@ -52,6 +52,25 @@
   display: block;
 }
 
+.footer-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 16px;
+  transition: color 0.2s ease;
+}
+
+.footer-email:hover {
+  color: #ffffff;
+}
+
+.footer-email svg {
+  flex-shrink: 0;
+}
+
 /* Navigation Links */
 .footer-links {
   display: flex;
@@ -87,6 +106,25 @@
 
 .footer-column ul li a:hover {
   color: #d1d5db;
+}
+
+/* Arrow hover effect for specific links */
+.footer-link-arrow {
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.footer-link-arrow::after {
+  content: '→';
+  font-size: 12px;
+  opacity: 0;
+  margin-left: 6px;
+  transition: opacity 0.2s ease;
+}
+
+.footer-link-arrow:hover::after {
+  opacity: 1;
 }
 
 /* Compliance Section */

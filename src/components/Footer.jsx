@@ -31,6 +31,13 @@ const Footer = () => {
               <CompanyGlyph className="footer-logo-glyph" />
               <CompanyWordmark className="footer-logo-wordmark" />
             </div>
+            <a href="mailto:support@torvi.ai" className="footer-email">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="M22 6L12 13L2 6"/>
+              </svg>
+              <span>support@torvi.ai</span>
+            </a>
           </div>
 
           {/* Navigation Links */}
@@ -40,25 +47,25 @@ const Footer = () => {
               <ul>
                 <li><a href="#agent-canvas">Agent Canvas</a></li>
                 <li><a href="#workflow-builder">Workflow Builder</a></li>
-                <li><a href="#rpa-modeller">RPA Modeller</a></li>
+                <li><a href="#superchat">Superchat</a></li>
               </ul>
             </div>
 
             <div className="footer-column">
               <h4>Company</h4>
               <ul>
-                <li><a href="#careers">Careers</a></li>
-                <li><Link to="/talk-to-us">Contact</Link></li>
-                <li><a href="#trust">Trust Center</a></li>
+                <li><Link to="/careers" className="footer-link-arrow">Careers</Link></li>
+                <li><Link to="/talk-to-us" className="footer-link-arrow">Contact</Link></li>
+                <li><a href="#trust" className="footer-link-arrow">Trust Center</a></li>
               </ul>
             </div>
 
             <div className="footer-column">
               <h4>Resources</h4>
               <ul>
-                <li><a href="#blog">Blog</a></li>
-                <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-                <li><Link to="/terms-of-service">Terms Of Service</Link></li>
+                <li><a href="#blog" className="footer-link-arrow">Blog</a></li>
+                <li><Link to="/privacy-policy" className="footer-link-arrow">Privacy Policy</Link></li>
+                <li><Link to="/terms-of-service" className="footer-link-arrow">Terms Of Service</Link></li>
               </ul>
             </div>
           </div>
