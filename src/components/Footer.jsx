@@ -63,7 +63,7 @@ const Footer = () => {
             <div className="footer-column">
               <h4>Resources</h4>
               <ul>
-                <li><a href="#blog" className="footer-link-arrow">Blog</a></li>
+                <li><Link to="/blog" className="footer-link-arrow">Blog</Link></li>
                 <li><Link to="/privacy-policy" className="footer-link-arrow">Privacy Policy</Link></li>
                 <li><Link to="/terms-of-service" className="footer-link-arrow">Terms Of Service</Link></li>
               </ul>
