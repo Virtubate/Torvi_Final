@@ -10,6 +10,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
 import Careers from './pages/Careers'
 import Blog from './pages/Blog'
+import BlogDetail from './pages/BlogDetail'
 import './App.css'
 
 function App() {
@@ -26,6 +27,8 @@ function App() {
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
+          <Route path="/solutions/:slug" element={<BlogDetail />} />
         </Routes>
         <Footer />
       </div>

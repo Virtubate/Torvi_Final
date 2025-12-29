@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Blog.css'
 
 // Tag icons
@@ -32,6 +33,17 @@ const AnnouncementIcon = () => (
   </svg>
 )
 
+const SolutionsIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 2v4"/>
+    <path d="m6.8 15-3.5 2"/>
+    <path d="m20.7 17-3.5-2"/>
+    <path d="M6.8 9 3.3 7"/>
+    <path d="m20.7 7-3.5 2"/>
+    <circle cx="12" cy="12" r="4"/>
+  </svg>
+)
+
 const getTagIcon = (tag) => {
   switch (tag.toLowerCase()) {
     case 'insights':
@@ -42,6 +54,8 @@ const getTagIcon = (tag) => {
       return <UpdatesIcon />
     case 'announcement':
       return <AnnouncementIcon />
+    case 'solutions':
+      return <SolutionsIcon />
     default:
       return null
   }
@@ -52,18 +66,18 @@ const Blog = () => {
     image: '/bb1.jpg',
     tag: 'ANNOUNCEMENT',
     date: 'DEC 15, 2025',
-    title: 'Your AI Agent. Your Data. Your Control.',
-    description: 'AI agents should make your work easier, not create new complications. With Torvi, you can create intelligent agents that understand your business, connect with your tools, and automate the workflows that matter to you...',
-    link: '#'
+    title: 'Your AI Agents. Your Data. Your Control.',
+    description: 'Most AI platforms ask you to compromise. Torvi refuses these compromises. We built an AI agent platform where you don\'t choose between power and privacy, capability and ease of use, or flexibility and simplicity...',
+    link: '/blog/why-torvi'
   }
 
   const updates = [
     {
       image: '/bb2.jpg',
-      tag: 'Insights',
-      title: 'Introducing Insights',
+      tag: 'Solutions',
+      title: 'IT Support Automation by AI',
       date: 'DEC 5, 2025',
-      link: '#',
+      link: '/solutions/it-ticket-automation',
       imageStyle: 'normal'
     },
     {
@@ -71,7 +85,7 @@ const Blog = () => {
       tag: 'Product',
       title: 'Fluent by design',
       date: 'NOV 18, 2025',
-      link: '#',
+      link: '/blog/fluent-by-design',
       imageStyle: 'normal'
     },
     {
@@ -79,7 +93,7 @@ const Blog = () => {
       tag: 'Updates',
       title: 'Introducing Intents & Tags',
       date: 'OCT 22, 2025',
-      link: '#',
+      link: '/blog/introducing-intents-tags',
       imageStyle: 'mirror'
     },
     {
@@ -87,7 +101,7 @@ const Blog = () => {
       tag: 'Insights',
       title: 'AI-Powered Analytics',
       date: 'OCT 10, 2025',
-      link: '#',
+      link: '/blog/ai-powered-analytics',
       imageStyle: 'mirror'
     },
     {
@@ -95,7 +109,7 @@ const Blog = () => {
       tag: 'Product',
       title: 'Workflow Automation',
       date: 'SEP 28, 2025',
-      link: '#',
+      link: '/blog/workflow-automation',
       imageStyle: 'zoom'
     }
   ]
@@ -134,7 +148,7 @@ const Blog = () => {
             </div>
             <h2 className="featured-title">{featuredArticle.title}</h2>
             <p className="featured-description">{featuredArticle.description}</p>
-            <a href={featuredArticle.link} className="featured-link">Read more</a>
+            <Link to={featuredArticle.link} className="featured-link">Read more</Link>
           </div>
         </div>
       </section>
@@ -145,7 +159,7 @@ const Blog = () => {
           <h2 className="updates-title">Use Cases</h2>
           <div className="updates-grid">
             {updates.map((post, index) => (
-              <a href={post.link} key={index} className="update-card">
+              <Link to={post.link} key={index} className="update-card">
                 <div className="update-image-wrapper">
                   <img src={post.image} alt={post.title} className={`update-image ${post.imageStyle}`} />
                   <span className="update-hover-text">Learn more</span>
@@ -158,7 +172,7 @@ const Blog = () => {
                   <h3 className="update-title">{post.title}</h3>
                   <span className="update-date">{post.date}</span>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
