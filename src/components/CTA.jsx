@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './CTA.css'
 
 const CTA = ({
@@ -24,7 +25,7 @@ const CTA = ({
           <p className="cta-description">
             {description}
           </p>
-          <button className="cta-button">{buttonText}</button>
+          <Link to="/talk-to-us" className="cta-button">{buttonText}</Link>
         </div>
       </div>
     </section>

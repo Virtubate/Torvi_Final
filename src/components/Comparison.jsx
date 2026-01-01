@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Comparison.css'
 
 const Comparison = () => {
@@ -88,7 +89,7 @@ const Comparison = () => {
             Why leaders choose Torvi<br/>
             over other solutions
           </h2>
-          <button className="comparison-cta">REQUEST A DEMO</button>
+          <Link to="/talk-to-us" className="comparison-cta">REQUEST A DEMO</Link>
         </div>
 
         {/* Desktop Grid */}

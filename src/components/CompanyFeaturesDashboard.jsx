@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './CompanyFeaturesDashboard.css'
 
 const CompanyFeaturesDashboard = () => {
@@ -21,12 +22,12 @@ const CompanyFeaturesDashboard = () => {
         </div>
       </div>
 
-      {/* Founder Cards - Portrait Images */}
+{/* Founder Cards - Hidden for now
       <div className="company-founder-cards-grid">
         <div className="company-founder-card">
-          <img 
-            src="" 
-            alt="Krishna, The Builder" 
+          <img
+            src=""
+            alt="Krishna, The Builder"
             className="company-founder-image"
           />
           <div className="company-founder-overlay">
@@ -41,9 +42,9 @@ const CompanyFeaturesDashboard = () => {
         </div>
 
         <div className="company-founder-card">
-          <img 
-            src="" 
-            alt="Rahul, The Navigator" 
+          <img
+            src=""
+            alt="Rahul, The Navigator"
             className="company-founder-image"
           />
           <div className="company-founder-overlay">
@@ -58,9 +59,9 @@ const CompanyFeaturesDashboard = () => {
         </div>
 
         <div className="company-founder-card">
-          <img 
-            src="" 
-            alt="Ram, The Anchor" 
+          <img
+            src=""
+            alt="Ram, The Anchor"
             className="company-founder-image"
           />
           <div className="company-founder-overlay">
@@ -74,6 +75,7 @@ const CompanyFeaturesDashboard = () => {
           </div>
         </div>
       </div>
+      */}
 
       {/* How It Works - Scrolling Cards */}
       <div className="company-how-it-works">
@@ -95,7 +97,7 @@ const CompanyFeaturesDashboard = () => {
           <div className="company-scroll-cards">
             <div className="company-scroll-card">
               <h4 className="company-card-title">Go live</h4>
-              <p className="company-card-description">Activate your policy with AI-reviewed logic</p>
+              <p className="company-card-description">Adapt your instructions with AI-reviewed logic</p>
             </div>
 
             <div className="company-scroll-card">
@@ -114,14 +116,14 @@ const CompanyFeaturesDashboard = () => {
             </div>
 
             <div className="company-scroll-card">
-              <h4 className="company-card-title">Deploy updates</h4>
-              <p className="company-card-description">Launch policy changes to controlled slices</p>
+              <h4 className="company-card-title">Deploy changes on the fly</h4>
+              <p className="company-card-description">Improvize without effecting your operations & triggers</p>
             </div>
 
             {/* Duplicate cards for seamless loop */}
             <div className="company-scroll-card">
               <h4 className="company-card-title">Go live</h4>
-              <p className="company-card-description">Activate your policy with AI-reviewed logic</p>
+              <p className="company-card-description">Adapt your instructions with AI-reviewed logic</p>
             </div>
 
             <div className="company-scroll-card">
@@ -140,8 +142,8 @@ const CompanyFeaturesDashboard = () => {
             </div>
 
             <div className="company-scroll-card">
-              <h4 className="company-card-title">Deploy updates</h4>
-              <p className="company-card-description">Launch policy changes to controlled slices</p>
+              <h4 className="company-card-title">Deploy changes on the fly</h4>
+              <p className="company-card-description">Improvize without effecting your operations & triggers</p>
             </div>
           </div>
         </div>
@@ -160,7 +162,7 @@ const CompanyFeaturesDashboard = () => {
         <p className="company-features-cta-description">
           Optimize your operation with powerful AI.
         </p>
-        <button className="company-features-cta-button">Talk to us</button>
+        <Link to="/talk-to-us" className="company-features-cta-button">Talk to us</Link>
       </div>
     </section>
   )

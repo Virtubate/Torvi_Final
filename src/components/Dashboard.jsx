@@ -17,11 +17,13 @@ const Dashboard = ({ variant = 'default' }) => {
       subtitle: 'The fastest way to build, govern, and scale enterprise AI agents.',
       buttonText: 'Explore Agent Canvas',
       icon: (
-        <svg className="grid-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <rect x="3" y="3" width="7" height="7" fill="white"/>
-          <rect x="14" y="3" width="7" height="7" fill="white"/>
-          <rect x="3" y="14" width="7" height="7" fill="white"/>
-          <rect x="14" y="14" width="7" height="7" fill="white"/>
+        // Robot/AI Agent icon - represents AI agents
+        <svg className="grid-icon" width="32" height="32" viewBox="0 0 24 24" fill="none">
+          <rect x="4" y="8" width="16" height="12" rx="2" stroke="white" strokeWidth="2"/>
+          <circle cx="9" cy="14" r="2" fill="white"/>
+          <circle cx="15" cy="14" r="2" fill="white"/>
+          <path d="M12 2v4M8 5h8" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+          <path d="M2 13h2M20 13h2" stroke="white" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
       bgImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop',
@@ -32,9 +34,12 @@ const Dashboard = ({ variant = 'default' }) => {
       subtitle: 'Build powerful automations with drag-and-drop logic. Connect AI agents, tools, and APIs to handle complex tasks end-to-end.',
       buttonText: 'Explore Builder',
       icon: (
-        <svg className="grid-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white"/>
-          <path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        // Split flow icon - one path splitting into two
+        <svg className="grid-icon" width="32" height="32" viewBox="0 0 24 24" fill="none">
+          <circle cx="4" cy="12" r="2.5" fill="white"/>
+          <circle cx="20" cy="6" r="2.5" fill="white"/>
+          <circle cx="20" cy="18" r="2.5" fill="white"/>
+          <path d="M6.5 12h4c2 0 3.5-1 5-3.5M10.5 12c1.5 2.5 3 3.5 5 3.5h2" stroke="white" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
       bgImage: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2070&auto=format&fit=crop',
@@ -45,16 +50,12 @@ const Dashboard = ({ variant = 'default' }) => {
       subtitle: 'A single chat that connects to all your applications. Just describe what you want done, and Superchat orchestrates it across every tool — no building required.',
       buttonText: 'Explore SuperChat',
       icon: (
-        <svg className="grid-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="3" fill="white"/>
-          <circle cx="6" cy="6" r="2" fill="white"/>
-          <circle cx="18" cy="6" r="2" fill="white"/>
-          <circle cx="6" cy="18" r="2" fill="white"/>
-          <circle cx="18" cy="18" r="2" fill="white"/>
-          <line x1="8" y1="7" x2="10" y2="10" stroke="white" strokeWidth="1.5"/>
-          <line x1="16" y1="7" x2="14" y2="10" stroke="white" strokeWidth="1.5"/>
-          <line x1="8" y1="17" x2="10" y2="14" stroke="white" strokeWidth="1.5"/>
-          <line x1="16" y1="17" x2="14" y2="14" stroke="white" strokeWidth="1.5"/>
+        // Magic chat bubble with sparkles
+        <svg className="grid-icon" width="32" height="32" viewBox="0 0 24 24" fill="none">
+          <path d="M21 12a8.5 8.5 0 0 1-8.5 8.5 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7A8.5 8.5 0 1 1 21 12z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M12 8l.8 2.2L15 11l-2.2.8L12 14l-.8-2.2L9 11l2.2-.8L12 8z" fill="white"/>
+          <circle cx="8" cy="9" r="1" fill="white"/>
+          <circle cx="16" cy="13" r="1" fill="white"/>
         </svg>
       ),
       bgImage: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=2076&auto=format&fit=crop',
@@ -1293,22 +1294,26 @@ const Dashboard = ({ variant = 'default' }) => {
                               <stop offset="0%" stopColor="#38bdf8" stopOpacity="1"/>
                               <stop offset="100%" stopColor="#a78bfa" stopOpacity="1"/>
                             </linearGradient>
+                            {/* Small arrow marker */}
+                            <marker id="arrow" markerWidth="4" markerHeight="4" refX="3" refY="2" orient="auto">
+                              <path d="M 0 0 L 4 2 L 0 4 Z" fill="#a78bfa" />
+                            </marker>
                           </defs>
 
                           {/* Webhook → HTTP Request */}
-                          <path d="M 102 138 C 140 138, 140 118, 178 118" className="wf-line"/>
+                          <path d="M 110 138 C 144 138, 144 118, 178 118" className="wf-line" markerEnd="url(#arrow)" />
 
                           {/* HTTP Request → Condition */}
-                          <path d="M 296 118 C 340 118, 340 138, 384 138" className="wf-line"/>
+                          <path d="M 303 118 C 344 118, 344 138, 384 138" className="wf-line" markerEnd="url(#arrow)" />
 
                           {/* Condition → Salesforce */}
-                          <path d="M 482 138 C 520 138, 520 118, 558 118" className="wf-line"/>
+                          <path d="M 489 138 C 524 138, 524 118, 558 118" className="wf-line" markerEnd="url(#arrow)" />
 
-                          {/* Condition → Google Sheets (branch down-left) */}
-                          <path d="M 433 161 C 433 195, 200 195, 200 230" className="wf-line"/>
+                          {/* Condition → Google Sheets */}
+                          <path d="M 437 161 L 437 190 Q 437 200, 313 200 Q 190 200, 190 215 L 190 230" className="wf-line" markerEnd="url(#arrow)" />
 
-                          {/* Condition → HubSpot (branch down-right) */}
-                          <path d="M 433 161 C 433 195, 480 195, 480 230" className="wf-line"/>
+                          {/* Condition → HubSpot */}
+                          <path d="M 437 161 L 437 190 Q 437 200, 448 200 Q 448 200, 448 215 L 448 230" className="wf-line" markerEnd="url(#arrow)" />
                         </svg>
 
                         {/* Workflow Nodes */}
@@ -1321,40 +1326,33 @@ const Dashboard = ({ variant = 'default' }) => {
                               </svg>
                             </span>
                             <span className="wf-label">Webhook</span>
-                            <span className="wf-connector-dot right"></span>
                           </div>
                         </div>
 
                         <div className="wf-node" style={{left: '178px', top: '95px'}}>
                           <div className="wf-node-content">
-                            <span className="wf-connector-dot left"></span>
                             <span className="wf-icon-wrapper wf-http">
                               <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor"/>
                               </svg>
                             </span>
                             <span className="wf-label">HTTP Request</span>
-                            <span className="wf-connector-dot right"></span>
                           </div>
                         </div>
 
                         <div className="wf-node" style={{left: '384px', top: '115px'}}>
                           <div className="wf-node-content">
-                            <span className="wf-connector-dot left"></span>
                             <span className="wf-icon-wrapper wf-condition">
                               <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                                 <path d="M12 2L2 12l10 10 10-10L12 2z" stroke="currentColor" strokeWidth="2"/>
                               </svg>
                             </span>
                             <span className="wf-label">Condition</span>
-                            <span className="wf-connector-dot right"></span>
-                            <span className="wf-connector-dot bottom"></span>
                           </div>
                         </div>
 
                         <div className="wf-node" style={{left: '558px', top: '95px'}}>
                           <div className="wf-node-content">
-                            <span className="wf-connector-dot left"></span>
                             <span className="wf-icon-wrapper wf-salesforce">
                               <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce" className="wf-logo" />
                             </span>
@@ -1364,7 +1362,6 @@ const Dashboard = ({ variant = 'default' }) => {
 
                         <div className="wf-node" style={{left: '120px', top: '230px'}}>
                           <div className="wf-node-content">
-                            <span className="wf-connector-dot top"></span>
                             <span className="wf-icon-wrapper wf-sheets">
                               <img src="https://www.gstatic.com/images/branding/product/1x/sheets_2020q4_32dp.png" alt="Google Sheets" className="wf-logo" />
                             </span>
@@ -1374,7 +1371,6 @@ const Dashboard = ({ variant = 'default' }) => {
 
                         <div className="wf-node" style={{left: '400px', top: '230px'}}>
                           <div className="wf-node-content">
-                            <span className="wf-connector-dot top"></span>
                             <span className="wf-icon-wrapper wf-hubspot">
                               <img src="https://www.hubspot.com/hubfs/HubSpot_Logos/HubSpot-Inversed-Favicon.png" alt="HubSpot" className="wf-logo" />
                             </span>

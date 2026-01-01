@@ -243,3 +243,211 @@
   }
 }
 
+/* ========================================
+   MOBILE HAMBURGER MENU STYLES
+   ======================================== */
+
+/* Hamburger Button - Hidden on desktop */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  gap: 5px;
+  z-index: 1002;
+}
+
+.hamburger-line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger to X animation */
+.hamburger-btn.open .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+  background-color: white;
+}
+
+.hamburger-btn.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.open .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+  background-color: white;
+}
+
+/* Mobile Menu Overlay - Expands from header */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 12px;
+  left: 16px;
+  right: 16px;
+  height: 56px;
+  background: #000;
+  z-index: 1001;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu-overlay.open {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  border-radius: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Mobile Menu Header */
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+.mobile-menu-logo {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  text-decoration: none;
+  color: white;
+}
+
+.mobile-logo-glyph {
+  height: 28px;
+  width: 28px;
+  color: white;
+}
+
+.mobile-logo-wordmark {
+  height: 56px;
+  width: auto;
+  color: white;
+  margin-left: -16px;
+  transform: translateY(-2px);
+}
+
+/* Mobile Menu Divider */
+.mobile-menu-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 0 20px;
+}
+
+/* Mobile Menu Content */
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 24px;
+  gap: 8px;
+}
+
+.mobile-menu-item {
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  padding: 14px 0;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  transition: opacity 0.2s ease;
+}
+
+.mobile-menu-item:hover {
+  opacity: 0.6;
+}
+
+.mobile-menu-cta {
+  margin-top: 32px;
+  background: white;
+  color: #000;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.mobile-menu-cta:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Desktop only class */
+.desktop-only {
+  display: block;
+}
+
+/* Show hamburger and hide desktop button on mobile */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-menu-overlay {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-menu-header {
+    padding: 10px 16px;
+  }
+
+  .mobile-logo-wordmark {
+    height: 52px;
+    margin-left: -14px;
+  }
+
+  .mobile-logo-glyph {
+    height: 26px;
+    width: 26px;
+  }
+
+  .mobile-menu-divider {
+    margin: 0 16px;
+  }
+
+  .mobile-menu-content {
+    padding: 32px 20px;
+  }
+
+  .mobile-menu-item {
+    font-size: 16px;
+    padding: 12px 0;
+  }
+
+  .mobile-menu-cta {
+    margin-top: 24px;
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+}
+

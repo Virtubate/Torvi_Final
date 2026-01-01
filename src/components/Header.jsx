@@ -23,6 +23,7 @@ const Header = () => {
   const navigate = useNavigate()
   const [isVisible, setIsVisible] = React.useState(true)
   const [lastScrollY, setLastScrollY] = React.useState(0)
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
 
   React.useEffect(() => {
     const controlNavbar = () => {
@@ -45,6 +46,26 @@ const Header = () => {
     window.addEventListener('scroll', controlNavbar)
     return () => window.removeEventListener('scroll', controlNavbar)
   }, [lastScrollY])
+
+  // Prevent body scroll when mobile menu is open
+  React.useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileMenuOpen])
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen)
+  }
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false)
+  }
 
   const handleFeaturesClick = () => {
     // Navigate to home first if not already there
@@ -80,30 +101,59 @@ const Header = () => {
   }
 
   return (
-    <header className={`header ${!isVisible ? 'header-hidden' : ''}`}>
-      <div className="container">
-        <nav className="nav">
-          <div className="nav-left">
-            <Link to="/" className="logo">
-              <CompanyGlyph className="logo-glyph" />
-              <CompanyWordmark className="logo-wordmark" />
-            </Link>
-            <div className="nav-links">
-              <div className="dropdown">
-                <button className="dropdown-btn" onClick={handleFeaturesClick}>Features</button>
-              </div>
-              <div className="dropdown">
-                <button className="dropdown-btn" onClick={handleCompanyClick}>Company</button>
+    <>
+      <header className={`header ${!isVisible ? 'header-hidden' : ''}`}>
+        <div className="container">
+          <nav className="nav">
+            <div className="nav-left">
+              <Link to="/" className="logo">
+                <CompanyGlyph className="logo-glyph" />
+                <CompanyWordmark className="logo-wordmark" />
+              </Link>
+              <div className="nav-links">
+                <div className="dropdown">
+                  <button className="dropdown-btn" onClick={handleFeaturesClick}>Features</button>
+                </div>
+                <div className="dropdown">
+                  <button className="dropdown-btn" onClick={handleCompanyClick}>Company</button>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="nav-right">
-            <a href="#" className="nav-link" style={{ display: 'none' }}>Sign in</a>
-            <button className="btn-primary" onClick={handleTalkToUsClick}>Talk to us</button>
-          </div>
-        </nav>
+            <div className="nav-right">
+              <a href="#" className="nav-link" style={{ display: 'none' }}>Sign in</a>
+              <button className="btn-primary desktop-only" onClick={handleTalkToUsClick}>Talk to us</button>
+              {/* Mobile Hamburger Button */}
+              <button className={`hamburger-btn ${mobileMenuOpen ? 'open' : ''}`} onClick={toggleMobileMenu} aria-label="Menu">
+                <span className="hamburger-line"></span>
+                <span className="hamburger-line"></span>
+                <span className="hamburger-line"></span>
+              </button>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`mobile-menu-overlay ${mobileMenuOpen ? 'open' : ''}`}>
+        <div className="mobile-menu-header">
+          <Link to="/" className="mobile-menu-logo" onClick={closeMobileMenu}>
+            <CompanyGlyph className="mobile-logo-glyph" />
+            <CompanyWordmark className="mobile-logo-wordmark" />
+          </Link>
+          <button className={`hamburger-btn open`} onClick={toggleMobileMenu} aria-label="Close Menu">
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+          </button>
+        </div>
+        <div className="mobile-menu-divider"></div>
+        <div className="mobile-menu-content">
+          <button className="mobile-menu-item" onClick={() => { handleFeaturesClick(); closeMobileMenu(); }}>Features</button>
+          <button className="mobile-menu-item" onClick={() => { handleCompanyClick(); closeMobileMenu(); }}>Company</button>
+          <button className="mobile-menu-cta" onClick={() => { handleTalkToUsClick(); closeMobileMenu(); }}>Talk to us</button>
+        </div>
       </div>
-    </header>
+    </>
   )
 }
 
