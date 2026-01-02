@@ -451,3 +451,69 @@
   }
 }
 
+/* ========================================
+   LIGHT PAGE STYLES (for pages with white/light backgrounds)
+   ======================================== */
+
+/* Dark hamburger for light pages */
+.hamburger-dark .hamburger-line {
+  background-color: #000;
+}
+
+.hamburger-dark.open .hamburger-line:nth-child(1) {
+  background-color: #000;
+}
+
+.hamburger-dark.open .hamburger-line:nth-child(3) {
+  background-color: #000;
+}
+
+/* Light mobile menu overlay */
+.mobile-menu-light {
+  background: #fff;
+}
+
+.mobile-menu-light .mobile-menu-header {
+  background: #fff;
+}
+
+.mobile-menu-light .mobile-menu-logo {
+  color: #000;
+}
+
+.mobile-menu-light .mobile-logo-glyph,
+.mobile-menu-light .mobile-logo-wordmark {
+  color: #000;
+}
+
+.mobile-menu-light .mobile-menu-divider {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu-light .mobile-menu-item {
+  color: #000;
+}
+
+.mobile-menu-light .mobile-menu-item:hover {
+  opacity: 0.6;
+}
+
+.mobile-menu-light .mobile-menu-cta {
+  background: #000;
+  color: #fff;
+}
+
+.mobile-menu-light .mobile-menu-cta:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+/* Light hamburger X button inside light menu */
+.mobile-menu-light .hamburger-btn .hamburger-line {
+  background-color: #000 !important;
+}
+
+.mobile-menu-light .hamburger-btn.open .hamburger-line:nth-child(1),
+.mobile-menu-light .hamburger-btn.open .hamburger-line:nth-child(3) {
+  background-color: #000 !important;
+}
+

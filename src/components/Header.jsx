@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import './Header.css'
 
 const CompanyWordmark = ({ className = 'h-6 w-auto' }) => (
@@ -21,9 +21,14 @@ const CompanyGlyph = ({ className = 'h-6 w-6' }) => (
 
 const Header = () => {
   const navigate = useNavigate()
+  const location = useLocation()
   const [isVisible, setIsVisible] = React.useState(true)
   const [lastScrollY, setLastScrollY] = React.useState(0)
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
+
+  // Pages with dark backgrounds (white hamburger, black menu)
+  const darkPages = ['/', '/company']
+  const isLightPage = !darkPages.includes(location.pathname)
 
   React.useEffect(() => {
     const controlNavbar = () => {
@@ -102,7 +107,7 @@ const Header = () => {
 
   return (
     <>
-      <header className={`header ${!isVisible ? 'header-hidden' : ''}`}>
+      <header className={`header ${!isVisible ? 'header-hidden' : ''} ${isLightPage ? 'header-light' : ''}`}>
         <div className="container">
           <nav className="nav">
             <div className="nav-left">
@@ -123,7 +128,7 @@ const Header = () => {
               <a href="#" className="nav-link" style={{ display: 'none' }}>Sign in</a>
               <button className="btn-primary desktop-only" onClick={handleTalkToUsClick}>Talk to us</button>
               {/* Mobile Hamburger Button */}
-              <button className={`hamburger-btn ${mobileMenuOpen ? 'open' : ''}`} onClick={toggleMobileMenu} aria-label="Menu">
+              <button className={`hamburger-btn ${mobileMenuOpen ? 'open' : ''} ${isLightPage ? 'hamburger-dark' : ''}`} onClick={toggleMobileMenu} aria-label="Menu">
                 <span className="hamburger-line"></span>
                 <span className="hamburger-line"></span>
                 <span className="hamburger-line"></span>
@@ -134,7 +139,7 @@ const Header = () => {
       </header>
 
       {/* Mobile Menu Overlay */}
-      <div className={`mobile-menu-overlay ${mobileMenuOpen ? 'open' : ''}`}>
+      <div className={`mobile-menu-overlay ${mobileMenuOpen ? 'open' : ''} ${isLightPage ? 'mobile-menu-light' : ''}`}>
         <div className="mobile-menu-header">
           <Link to="/" className="mobile-menu-logo" onClick={closeMobileMenu}>
             <CompanyGlyph className="mobile-logo-glyph" />

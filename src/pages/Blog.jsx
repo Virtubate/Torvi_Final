@@ -77,40 +77,83 @@ const Blog = () => {
       tag: 'Solutions',
       title: 'IT Support Automation by AI',
       date: 'DEC 5, 2025',
-      link: '/solutions/it-ticket-automation',
+      link: '/blog/it-ticket-automation',
       imageStyle: 'normal'
     },
     {
       image: '/bb1.jpg',
-      tag: 'Product',
-      title: 'Fluent by design',
+      tag: 'Solutions',
+      title: 'AI Invoice Automation',
       date: 'NOV 18, 2025',
-      link: '/blog/fluent-by-design',
+      link: '/blog/invoice-approval-automation',
       imageStyle: 'normal'
     },
     {
       image: '/bb2.jpg',
-      tag: 'Updates',
-      title: 'Introducing Intents & Tags',
+      tag: 'Solutions',
+      title: 'AI Employee Onboarding Automation',
       date: 'OCT 22, 2025',
-      link: '/blog/introducing-intents-tags',
+      link: '/blog/employee-lifecycle-automation',
+      imageStyle: 'mirror'
+    },
+    {
+      image: '/bb1.jpg',
+      tag: 'Solutions',
+      title: 'Compliance Automation by AI',
+      date: 'OCT 10, 2025',
+      link: '/blog/compliance-audit-automation',
+      imageStyle: 'mirror'
+    },
+    {
+      image: '/bb2.jpg',
+      tag: 'Solutions',
+      title: 'Automation for Procurement & Vendor Management',
+      date: 'SEP 28, 2025',
+      link: '/blog/procurement-vendor-automation',
+      imageStyle: 'zoom'
+    }
+  ]
+
+  const editorials = [
+    {
+      image: '/bb1.jpg',
+      tag: 'Insights',
+      title: 'Build AI Agents Without Code',
+      date: 'DEC 1, 2025',
+      link: '/blog/build-ai-agents-without-coding',
+      imageStyle: 'normal'
+    },
+    {
+      image: '/bb2.jpg',
+      tag: 'Insights',
+      title: 'What Is RAG?',
+      date: 'NOV 15, 2025',
+      link: '/blog/what-is-rag',
       imageStyle: 'mirror'
     },
     {
       image: '/bb1.jpg',
       tag: 'Insights',
-      title: 'AI-Powered Analytics',
-      date: 'OCT 10, 2025',
-      link: '/blog/ai-powered-analytics',
-      imageStyle: 'mirror'
+      title: 'RAG in Action',
+      date: 'NOV 1, 2025',
+      link: '/blog/rag-automation-examples',
+      imageStyle: 'zoom'
     },
     {
       image: '/bb2.jpg',
-      tag: 'Product',
-      title: 'Workflow Automation',
-      date: 'SEP 28, 2025',
-      link: '/blog/workflow-automation',
-      imageStyle: 'zoom'
+      tag: 'Insights',
+      title: 'RAG vs RAFT',
+      date: 'OCT 20, 2025',
+      link: '/blog/rag-vs-raft',
+      imageStyle: 'normal'
+    },
+    {
+      image: '/bb1.jpg',
+      tag: 'Insights',
+      title: 'Context Caching',
+      date: 'OCT 10, 2025',
+      link: '/blog/context-caching',
+      imageStyle: 'mirror'
     }
   ]
 
@@ -159,6 +202,31 @@ const Blog = () => {
           <h2 className="updates-title">Use Cases</h2>
           <div className="updates-grid">
             {updates.map((post, index) => (
+              <Link to={post.link} key={index} className="update-card">
+                <div className="update-image-wrapper">
+                  <img src={post.image} alt={post.title} className={`update-image ${post.imageStyle}`} />
+                  <span className="update-hover-text">Learn more</span>
+                </div>
+                <div className="update-content">
+                  <span className="update-tag">
+                    {getTagIcon(post.tag)}
+                    {post.tag}
+                  </span>
+                  <h3 className="update-title">{post.title}</h3>
+                  <span className="update-date">{post.date}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Editorials Section */}
+      <section className="blog-updates blog-editorials">
+        <div className="blog-updates-container">
+          <h2 className="updates-title">Editorials</h2>
+          <div className="updates-grid">
+            {editorials.map((post, index) => (
               <Link to={post.link} key={index} className="update-card">
                 <div className="update-image-wrapper">
                   <img src={post.image} alt={post.title} className={`update-image ${post.imageStyle}`} />
