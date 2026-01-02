@@ -44,7 +44,7 @@ const FeaturesDashboard = () => {
   ]
   
   return (
-    <section id="features-dashboard" className="features-dashboard-section">
+    <section id="features" className="features-dashboard-section">
       {/* First Instance */}
       <Features />
       <Dashboard />

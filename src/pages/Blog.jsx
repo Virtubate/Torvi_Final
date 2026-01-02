@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import './Blog.css'
 
 // Tag icons
@@ -157,8 +158,24 @@ const Blog = () => {
     }
   ]
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blogs",
+    "description": "Explore AI automation insights, use cases, and editorials. Learn to build AI agents, implement RAG, and automate workflows across 275+ applications.",
+    "url": "https://torvi.ai/blog"
+  }
+
   return (
     <div className="blog-page">
+      <Helmet>
+        <title>Blog | Torvi AI</title>
+        <meta name="description" content="Explore AI automation insights, use cases, and editorials. Learn to build AI agents, implement RAG, and automate workflows across 275+ applications." />
+        <link rel="canonical" href="https://torvi.ai/blog" />
+        <script type="application/ld+json">
+          {JSON.stringify(schemaData)}
+        </script>
+      </Helmet>
       {/* Hero Section */}
       <section className="blog-hero">
         <div className="blog-hero-container">

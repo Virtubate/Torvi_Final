@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async'
 import CTA from '../components/CTA'
 import './Careers.css'
 
@@ -32,8 +33,24 @@ const Careers = () => {
     },
   ]
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Careers",
+    "description": "Join us building the future of enterprise AI automation. Work on AI agents, custom GPT models, and workflow automation. Explore open positions.",
+    "url": "https://torvi.ai/careers"
+  }
+
   return (
     <div className="careers-page">
+      <Helmet>
+        <title>Careers | Torvi AI</title>
+        <meta name="description" content="Join us building the future of enterprise AI automation. Work on AI agents, custom GPT models, and workflow automation. Explore open positions." />
+        <link rel="canonical" href="https://torvi.ai/careers" />
+        <script type="application/ld+json">
+          {JSON.stringify(schemaData)}
+        </script>
+      </Helmet>
       {/* Hero Section */}
       <section className="careers-hero">
         <span className="careers-label">CAREERS</span>
@@ -43,7 +60,10 @@ const Careers = () => {
         <p className="careers-tagline">
           Our mission is simply to give every company the power to automate anything, across any application, with just a prompt.
         </p>
-        <button className="careers-btn">See open roles</button>
+        <button
+          className="careers-btn"
+          onClick={() => document.getElementById('join-team').scrollIntoView({ behavior: 'smooth' })}
+        >See open roles</button>
       </section>
 
       {/* Content Section */}
@@ -98,7 +118,7 @@ const Careers = () => {
       </section>
 
       {/* Join Our Team Section */}
-      <section className="careers-jobs-section">
+      <section id="join-team" className="careers-jobs-section">
         <h2 className="careers-jobs-title">Join the team</h2>
         <div className="careers-jobs-list">
           {jobListings.map((job, index) => (
@@ -117,6 +137,7 @@ const Careers = () => {
         title="Ready to build the next-gen<br/>enterprise AI?"
         description="Join the team shaping how enterprises around the world optimize their tool utility effectively and solve complexities with agentic intelligence."
         buttonText="See open roles"
+        onButtonClick={() => document.getElementById('join-team').scrollIntoView({ behavior: 'smooth' })}
       />
     </div>
   )

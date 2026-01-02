@@ -6,7 +6,8 @@ const CTA = ({
   label = "GET A PERSONALIZED DEMO",
   title = "Ready to see Torvi<br/>in action?",
   description = "Torvi's AI agents handle complex workflows at scale, from live delivery issues to compliance decisions, while maintaining over utmost operational accuracy.",
-  buttonText = "Talk to us"
+  buttonText = "Talk to us",
+  onButtonClick = null
 }) => {
   return (
     <section className="cta-section">
@@ -25,7 +26,11 @@ const CTA = ({
           <p className="cta-description">
             {description}
           </p>
-          <Link to="/talk-to-us" className="cta-button">{buttonText}</Link>
+          {onButtonClick ? (
+            <button className="cta-button" onClick={onButtonClick}>{buttonText}</button>
+          ) : (
+            <Link to="/talk-to-us" className="cta-button">{buttonText}</Link>
+          )}
         </div>
       </div>
     </section>

@@ -1,0 +1,6 @@
+# robots.txt for Torvi AI
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://torvi.ai/sitemap.xml

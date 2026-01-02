@@ -1,5 +1,6 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import CTA from '../components/CTA'
 import './BlogDetail.css'
 
@@ -2312,8 +2313,43 @@ const BlogDetail = () => {
   // Track heading index for IDs
   let headingIndex = 0
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": blog.title,
+    "description": blog.metaDescription,
+    "image": `https://torvi.ai${blog.image}`,
+    "datePublished": blog.date,
+    "author": {
+      "@type": "Organization",
+      "name": "Torvi AI"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Torvi AI",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://torvi.ai/torvi-glyph.svg"
+      }
+    },
+    "url": `https://torvi.ai/blog/${slug}`
+  }
+
   return (
     <div className="blog-detail-page">
+      <Helmet>
+        <title>{blog.metaTitle}</title>
+        <meta name="description" content={blog.metaDescription} />
+        <link rel="canonical" href={`https://torvi.ai/blog/${slug}`} />
+        <meta property="og:title" content={blog.title} />
+        <meta property="og:description" content={blog.metaDescription} />
+        <meta property="og:image" content={`https://torvi.ai${blog.image}`} />
+        <meta property="og:url" content={`https://torvi.ai/blog/${slug}`} />
+        <meta property="og:type" content="article" />
+        <script type="application/ld+json">
+          {JSON.stringify(schemaData)}
+        </script>
+      </Helmet>
       {/* Hero Section */}
       <section className="blog-detail-hero">
         <div className="blog-detail-hero-container">
